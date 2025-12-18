@@ -907,16 +907,10 @@
         });
 
         // --- MAP LAZY LOADING ---
-        const mapObserver = new IntersectionObserver((entries, observer) => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting) {
-              const iframe = entry.target;
-              iframe.src = iframe.dataset.src;
-              observer.unobserve(iframe);
-            }
-          });
-        });
-        if (mapIframe) mapObserver.observe(mapIframe);
+        // --- MAP LOADING ---
+        if (mapIframe) {
+          mapIframe.src = propertyConfig.mapa.urlEmbed;
+        }
       });
     </script>
   </body>
