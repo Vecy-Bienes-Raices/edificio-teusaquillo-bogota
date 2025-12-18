@@ -926,9 +926,18 @@
         });
 
         // --- MAP LAZY LOADING ---
-        // --- MAP LOADING ---
+        // --- MAP LAZY LOADING ---
         if (mapIframe) {
-          mapIframe.src = propertyConfig.mapa.urlEmbed;
+          const mapObserver = new IntersectionObserver((entries, self) => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                mapIframe.src = propertyConfig.mapa.urlEmbed;
+                self.unobserve(entry.target);
+              }
+            });
+          }, { rootMargin: "200px" });
+          
+          mapObserver.observe(mapIframe);
         }
       });
     </script>
