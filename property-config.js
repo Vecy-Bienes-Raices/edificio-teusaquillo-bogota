@@ -60,12 +60,12 @@ const propertyConfig = {
     { name: "Vías Principales", emoji: "🛣️" },
     { name: "Zona de Alta Demanda", emoji: "📈" }
   ],
-  destacadoUbicacion: "Ubicado en <strong>San Luis - Teusaquillo</strong> (Carrera 18 # 60 - 51), el corazón de Bogotá. Rodeado de universidades y comercio, garantizando una <strong>ocupación constante</strong>.",
+  destacadoUbicacion: "Ubicado en <strong>San Luis - Teusaquillo</strong> (Carrera 16 # 60 - 12), el corazón de Bogotá. Rodeado de universidades y comercio, garantizando una <strong>ocupación constante</strong>.",
 
   mapa: {
-    // Embed genérico de San Luis, Teusaquillo (Cercano a Cra 18 # 60-51)
-    urlEmbed: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.7644783775!2d-74.073!3d4.646!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f9a3f3f3f3f3f%3A0x3f3f3f3f3f3f3f3f!2sSan%20Luis%2C%20Teusaquillo%2C%20Bogot%C3%A1!5e0!3m2!1ses!2sco!4v1678886400000",
-    titulo: "Ubicación exacta: Carrera 18 # 60 - 51"
+    // Embed dinámico usando la dirección exacta
+    urlEmbed: "https://maps.google.com/maps?q=Carrera+16+%2360-12%2C+Bogot%C3%A1&t=&z=15&ie=UTF8&iwloc=&output=embed",
+    titulo: "Ubicación exacta: Carrera 16 # 60 - 12"
   },
 
   descripcionFinal: {
@@ -104,7 +104,7 @@ const propertyConfig = {
   share: {
     whatsappText: `🏢 *EDIFICIO EN VENTA - TEUSAQUILLO, BOGOTÁ*
 
-📍 Ubicación: Cra 18 # 60 - 51 (San Luis)
+📍 Ubicación: Cra 16 # 60 - 12 (San Luis)
 💲 Precio: $3.000.000.000
 💰 Rentabilidad: $17 - $20 Millones/mes (Actualmente)
 📈 Proyección: +$30 Millones/mes
