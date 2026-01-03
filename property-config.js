@@ -4,9 +4,9 @@
  */
 const propertyConfig = {
   seo: {
-    title: "Edificio en Venta y Rentando - San Luis, Teusaquillo | Inversión Alta Rentabilidad",
-    description: "Edificio en Venta Teusaquillo Bogotá. Rentando $17-$20M/mes. 1.068 m², 4 pisos, local, oficinas, apartaestudios. Proyección +$30M/mes.",
-    keywords: "Venta Edificio Teusaquillo, Edificio Rentando Bogotá, Inversión Inmobiliaria San Luis, Edificio Uso Mixto Bogotá, Venta Propiedad Raíz",
+    title: "Edificio en Venta y Rentando - San Luis, Teusaquillo | Alta Rentabilidad",
+    description: "Inversión Inmobiliaria Bogotá: Edificio en San Luis Teusaquillo. Rentando $18.96M/mes. 4 Pisos, Local, Clínica, Oficinas y Airbnb. Gran potencial.",
+    keywords: "Edificio en Venta Teusaquillo, Inversión Inmobiliaria Bogotá, Edificio Rentando San Luis, Venta Propiedad Raíz, Edificio con Local y Oficinas",
     ogUrl: "https://edificio-teusaquillo-bogota.netlify.app/",
     ogImage: "assets/1.png",
     author: "",
@@ -17,37 +17,37 @@ const propertyConfig = {
     headerBadge: "🚀 ¡Máquina de Renta Inmobiliaria! 🏢",
     tituloHtml: "Edificio en San Luis - Teusaquillo",
     precioVenta: "$3.000.000.000",
-    valorAdmin: "$17 - $20 Millones/mes",
-    labelExtra: "💰 Rentabilidad Actual (Neta Est.)"
+    valorAdmin: "$18.960.000 / Mes Promedio",
+    labelExtra: "💰 Rentabilidad Actual (Demostrable)"
   },
 
   detalles: [
     { label: "Área Const.", value: "1.068 m²", icon: "📐" },
     { label: "Lote", value: "12 x 30 m", icon: "📏" },
+    { label: "Rentabilidad", value: "$18.96M/mes", icon: "💵" },
     { label: "Pisos", value: "4 Pisos", icon: "🏢" },
     { label: "Remodelado", value: "Hace 2 años", icon: "🛠️" },
     { label: "Baños", value: "15", icon: "🚽" },
     { label: "Uso", value: "Mixto/Comercial", icon: "🏙️" },
-    { label: "Estructura", value: "Antisísmica", icon: "🏗️" },
-    { label: "ROI Est.", value: "8.27% Anual", icon: "📈" },
+    { label: "ROI Est.", value: "~8% Anual", icon: "📈" },
     { label: "Ubicación", value: "San Luis, Teusaquillo", icon: "📍" }
   ],
 
   caracteristicasInternas: [
-    { name: "Local Comercial (1º Piso)", emoji: "🏪" },
-    { name: "Clínica Odontológica (1º)", emoji: "🦷" },
-    { name: "Patio Amplio (Potencial +8 Habs)", emoji: "🌳" },
-    { name: "9 Oficinas Arrendadas (2º)", emoji: "💼" },
-    { name: "9 Habitaciones Airbnb (3º)", emoji: "🛏️" },
-    { name: "Coworking (3º)", emoji: "💻" },
-    { name: "11 Habitaciones (4º)", emoji: "🛠️" },
-    { name: "3 Habs Amobladas (4º)", emoji: "🛋️" },
+    { name: "Local 40m² (1º Piso)", emoji: "🏪" },
+    { name: "Clínica 9 Consultorios (1º)", emoji: "⚕️" },
+    { name: "Recepción y Sala Espera", emoji: "🛋️" },
+    { name: "9 Oficinas Ocupadas (2º)", emoji: "💼" },
+    { name: "11 Habitaciones + Lavandería (3º)", emoji: "🛏️" },
+    { name: "9 Habitaciones + Coworking (4º)", emoji: "💻" },
+    { name: "Cocinas Equipadas por Piso", emoji: "🍳" },
+    { name: "Zona Lavandería (3º y 4º)", emoji: "🧺" },
     { name: "Servicios Independientes", emoji: "🛢️" },
-    { name: "4 Tanques Reserva", emoji: "💧" },
-    { name: "Tubería/Cableado Nuevo", emoji: "⚡" },
+    { name: "Tanques de Reserva", emoji: "💧" },
+    { name: "Cableado Estructurado", emoji: "⚡" },
     { name: "Acabados Triple AAA", emoji: "⭐" }
   ],
-  destacadoInterno: "Edificio de <strong>4 pisos</strong> con distribución estratégica: Local y Clínica en 1º piso, Oficinas en 2º, y modelo <strong>Airbnb/Coliving</strong> en 3º y 4º piso. <br>¡Tuberías y cableado renovados hace 2 años!",
+  destacadoInterno: "Propiedad de <strong>Inversión Híbrida:</strong> Combina la estabilidad de contratos a largo plazo (Local, Clínica, Oficinas) con el <strong>alto flujo de caja</strong> del modelo Airbnb/Coliving en los pisos superiores. <br>¡Versatilidad única en el sector!",
 
   caracteristicasExternas: [
     { name: "Ubicación Estratégica", emoji: "📍" },
@@ -68,24 +68,21 @@ const propertyConfig = {
   },
 
   descripcionFinal: {
-    titulo: "🚀 Proyección: De $20M a $30M Mensuales",
+    titulo: "📊 Reporte de Rentabilidad y Proyección",
     texto: `
     <div class="roi-item">
-      💰 <strong>Rentabilidad Actual:</strong> Genera entre <strong>$17 a $20 Millones mensuales netos</strong> (aprox. 8.27% ROI anual).
-    </div>
-    
-    <div class="roi-item">
-      📈 <strong>Potencial de Expansión ("Máquina de Renta"):</strong>
+      💰 <strong>Ingresos Mensuales Actuales: $18.960.000 COP</strong>
       <ul class="roi-list">
-        <li>Amoblar las 9 habitaciones restantes del 4º piso.</li>
-        <li>Convertir las 9 oficinas del 2º piso en habitaciones Airbnb.</li>
-        <li>Adecuar los 9 consultorios de la clínica (1º piso) en habitaciones.</li>
-        <li>Construir +8 nuevas habitaciones en el patio trasero.</li>
+        <li><strong>Local (40m²):</strong> $2.400.000</li>
+        <li><strong>Clínica Odontológica:</strong> $2.900.000 (Utilidad Neta <small>*Después de equipos</small>)</li>
+        <li><strong>Oficinas (2º Piso):</strong> $4.660.000 (Ocupación Total)</li>
+        <li><strong>Airbnb/Coliving (3º y 4º):</strong> $9.000.000 Promedio (<small>Fluctúa $8-10M</small>)</li>
       </ul>
     </div>
     
-    <div class="roi-item projection">
-      👉 <strong>Oportunidad:</strong> Con estas adecuaciones, la renta podría superar los <strong>$30.000.000 COP mensuales</strong>. ¡Un activo sólido que crece contigo!
+    <div class="roi-item projection" style="background: rgba(16, 185, 129, 0.1); border-left-color: #10b981;">
+      🚀 <strong>Potencial de Crecimiento:</strong>
+      <p style="margin-top: 5px; font-size: 14px;">Actualmente hay <strong>10 habitaciones disponibles</strong> para amoblar y rentar en el modelo Airbnb. Al activarlas, la rentabilidad mensual superará fácilmente los <strong>$30.000.000 COP</strong>.</p>
     </div>`
   },
 
@@ -112,17 +109,17 @@ const propertyConfig = {
 
 📍 *Ubicación:* San Luis, Teusaquillo, Bogotá
 📐 *Área:* 1.068 m² (Lote 12x30m)
-🏢 *Construcción:* 4 Pisos
-🤑 *Renta Actual:* $17 - $20 Millones/mes
+💵 *Renta Actual:* $18.960.000 / Mes (Promedio)
 🚀 *Proyección:* +$30 Millones/mes
 
-✅ *Distribución:*
-- 1º: Local + Clínica Odontológica + Patio (con potencial)
-- 2º: 9 Oficinas
-- 3º: 9 Habitaciones Airbnb + Coworking
-- 4º: 11 Habitaciones (3 amobladas)
+✅ *Distribución de Ingresos:*
+- Local Comercial (40m²)
+- Clínica Odontológica (9 Consultorios + Recepción)
+- 9 Oficinas (2º Piso - Alquiladas)
+- 20 Habitaciones (Modelo Airbnb/Coliving - Pisos 3 y 4)
+- Coworking y Lavandería
 
-🔗 *Ver Fotos y Video:*
+🔗 *Ver Reporte Detallado y Fotos:*
 https://edificio-teusaquillo-bogota.netlify.app/`
   }
 };
