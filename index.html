@@ -11,6 +11,7 @@
     <link rel="preload" as="image" href="assets/1.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <meta name="description" content="Edificio en Venta Teusaquillo Bogotá. Rentando $18.9M/mes. 1.068 m², 4 pisos, local, oficinas, apartaestudios. Proyección +$30M/mes." />
     <meta property="og:title" content="Edificio en Venta - Teusaquillo, Bogotá | Alta Rentabilidad" />
     <meta property="og:description" content="Rentando $18.9M/mes. 1.068 m², 4 pisos. Ideal para modelo Airbnb/Coliving." />
@@ -31,7 +32,7 @@
         margin: 0;
       }
       body {
-        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        font-family: "Outfit", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
         background: radial-gradient(
           ellipse at center,
           #c19a6b 0%,
@@ -680,6 +681,12 @@
 
     <script>
       document.addEventListener("DOMContentLoaded", function () {
+        // --- Scroll to Top & Optimization ---
+        if ('scrollRestoration' in history) {
+          history.scrollRestoration = 'manual';
+        }
+        window.scrollTo(0, 0);
+
         if (typeof propertyConfig === "undefined") {
           console.error("No se encontró el archivo property-config.js");
           return;

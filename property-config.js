@@ -38,7 +38,7 @@ const propertyConfig = {
     { name: "Clínica 9 Consultorios (1º)", emoji: "⚕️" },
     { name: "Recepción y Sala Espera", emoji: "🛋️" },
     { name: "9 Oficinas Ocupadas (2º)", emoji: "💼" },
-    { name: "11 Habitaciones + Lavandería (3º)", emoji: "🛏️" },
+    { name: "11 Habitaciones (3º Piso)", emoji: "🛏️" },
     { name: "9 Habitaciones + Estudio (4º)", emoji: "💻" },
     { name: "Cocinas Equipadas por Piso", emoji: "🍳" },
     { name: "Zona Lavandería (3º y 4º)", emoji: "🧺" },
@@ -76,14 +76,16 @@ const propertyConfig = {
         <li><strong>Local Comercial (Independiente):</strong> $2.400.000</li>
         <li><strong>Clínica Odontológica (9 Consult.):</strong> $2.900.000 (Neto)</li>
         <li><strong>Piso 2 (9 Oficinas Ocupadas):</strong> $4.660.000</li>
-        <li><strong>Pisos 3 y 4 (Airbnb/Habitaciones):</strong> $9.000.000 (Promedio)</li>
+        <li><strong>Pisos 3 y 4 (Airbnb/Coliving):</strong> $9.000.000 Promedio (10 Hbt. Rentando)</li>
       </ul>
       <p style="margin-top:10px; font-size: 1.1em;">💵 <strong>TOTAL RENTA ACTUAL: $18.960.000 /mes</strong></p>
 
       <div style="background: rgba(255, 193, 7, 0.1); border-left: 4px solid #ffc107; padding: 12px; margin: 15px 0; border-radius: 4px;">
-        ⚠️ <strong>Nota del Propietario:</strong> El ingreso de la clínica corresponde al 50% de su potencial real ($5.8M). El propietario actual (odontólogo) ocupa la otra mitad del espacio y equipos.
+        ⚠️ <strong>Nota del Propietario:</strong><br>
+        • <strong>Clínica:</strong> El ingreso ($2.9M) es solo el 50% del potencial. El propietario actual ocupa la otra mitad.<br>
+        • <strong>Habitaciones:</strong> Son <strong>20 unidades en total</strong> (Pisos 3 y 4). Actualmente solo <strong>10 están amobladas y rentando</strong>. Las otras 10 están listas para amoblar y duplicar este ingreso inmediatamente.
         <br><br>
-        ℹ️ <strong>Zona de Trabajo:</strong> El espacio del 4º piso no es un coworking comercial; es un beneficio exclusivo para los inquilinos (principalmente estudiantes extranjeros y profesionales), lo que garantiza alta ocupación y valor agregado.
+        ℹ️ <strong>Zona de Trabajo:</strong> El espacio del 4º piso es un beneficio exclusivo para los inquilinos.
       </div>
 
       <div class="projection" style="background: rgba(16, 185, 129, 0.1); border-left: 4px solid #10b981; padding: 10px;">
@@ -124,7 +126,7 @@ const propertyConfig = {
 ✅ *Distribución Real:*
 • *1° Piso:* Local ($2.4M) + Clínica ($2.9M) + Patio Amplio
 • *2° Piso:* 9 Oficinas Ocupadas ($4.6M)
-• *3° y 4° Piso:* 20 Habitaciones (Airbnb/Coliving) + Zona Estudio ($9M promedio)
+• *3° y 4° Piso:* 20 Habitaciones Total (10 Rentando + 10 por explotar) + Zona Estudio
 
 🔗 *Ver Fotos y Ficha Técnica:*
 https://edificio-teusaquillo-bogota.netlify.app/`
