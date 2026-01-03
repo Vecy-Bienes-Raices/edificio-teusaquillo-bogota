@@ -29,4 +29,5 @@ Para actualizar la información:
 3. Los cambios se reflejarán en pocos minutos.
 
 ---
-_Ficha Técnica Digital Inmobiliaria_
+
+### Ficha Técnica Digital Inmobiliaria
