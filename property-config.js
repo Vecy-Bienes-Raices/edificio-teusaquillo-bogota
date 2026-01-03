@@ -14,22 +14,17 @@ const propertyConfig = {
   },
   
   infoPrincipal: {
-    headerBadge: "🚀 ¡Máquina de Renta Inmobiliaria! 🏢",
-    tituloHtml: "Edificio en San Luis - Teusaquillo",
+    headerBadge: "🚀 ¡Activo de Alta Rentabilidad en Teusaquillo! 🏢",
+    tituloHtml: "Edificio Multifuncional - San Luis",
     precioVenta: "$3.000.000.000",
-    valorAdmin: "$18.960.000 / Mes Promedio",
-    labelExtra: "💰 Rentabilidad Actual (Demostrable)"
+    valorAdmin: "$18.960.000 /mes", // Valor promedio calculado
+    labelExtra: "💰 Rentabilidad Mensual Promedio"
   },
 
   detalles: [
     { label: "Área Const.", value: "1.068 m²", icon: "📐" },
-    { label: "Lote", value: "12 x 30 m", icon: "📏" },
-    { label: "Rentabilidad", value: "$18.96M/mes", icon: "💵" },
-    { label: "Pisos", value: "4 Pisos", icon: "🏢" },
-    { label: "Remodelado", value: "Hace 2 años", icon: "🛠️" },
-    { label: "Baños", value: "15", icon: "🚽" },
-    { label: "Uso", value: "Mixto/Comercial", icon: "🏙️" },
-    { label: "ROI Est.", value: "~8% Anual", icon: "📈" },
+    { label: "Pisos", value: "4 Niveles", icon: "🏢" },
+    { label: "Unidades", value: "30+ Espacios", icon: "�" },
     { label: "Ubicación", value: "San Luis, Teusaquillo", icon: "📍" }
   ],
 
@@ -68,21 +63,25 @@ const propertyConfig = {
   },
 
   descripcionFinal: {
-    titulo: "📊 Reporte de Rentabilidad y Proyección",
+    titulo: "Análisis de Distribución y Rentabilidad",
     texto: `
-    <div class="roi-item">
-      💰 <strong>Ingresos Mensuales Actuales: $18.960.000 COP</strong>
-      <ul class="roi-list">
-        <li><strong>Local (40m²):</strong> $2.400.000</li>
-        <li><strong>Clínica Odontológica:</strong> $2.900.000 (Utilidad Neta <small>*Después de equipos</small>)</li>
-        <li><strong>Oficinas (2º Piso):</strong> $4.660.000 (Ocupación Total)</li>
-        <li><strong>Airbnb/Coliving (3º y 4º):</strong> $9.000.000 Promedio (<small>Fluctúa $8-10M</small>)</li>
-      </ul>
+    <div class="roi-container">
+      <div class="roi-item">
+        <strong>� Piso 1 - Comercial:</strong> Local de 40m² y Clínica Odontológica de alto nivel (Recepción, 9 consultorios y patio). 
+        <br><em>Renta neta estimada: $5.300.000 COP</em>
+      </div>
+      <div class="roi-item">
+        <strong>📍 Piso 2 - Corporativo:</strong> 9 Oficinas independientes con ocupación total.
+        <br><em>Renta: $4.660.000 COP</em>
+      </div>
+      <div class="roi-item">
+        <strong>📍 Piso 3 y 4 - Coliving/Airbnb:</strong> 20 habitaciones en total, 4 baños compartidos, 2 cocinas equipadas, zonas de lavandería y un área de Coworking premium con WiFi y TV.
+        <br><em>Renta promedio dinámica: $9.000.000 COP</em>
+      </div>
     </div>
     
-    <div class="roi-item projection" style="background: rgba(16, 185, 129, 0.1); border-left-color: #10b981;">
-      🚀 <strong>Potencial de Crecimiento:</strong>
-      <p style="margin-top: 5px; font-size: 14px;">Actualmente hay <strong>10 habitaciones disponibles</strong> para amoblar y rentar en el modelo Airbnb. Al activarlas, la rentabilidad mensual superará fácilmente los <strong>$30.000.000 COP</strong>.</p>
+    <div class="roi-highlight">
+      <strong>📈 Potencial de Expansión:</strong> El edificio cuenta actualmente con 10 habitaciones disponibles para activar, lo que permitiría escalar la renta por encima de los <strong>$30.000.000 COP mensuales</strong>.
     </div>`
   },
 
@@ -104,23 +103,7 @@ const propertyConfig = {
   },
 
   share: {
-    whatsappText: `🏢 *EDIFICIO EN VENTA - SAN LUIS, TEUSAQUILLO*
-💰 *Precio:* $3.000.000.000 COP
-
-📍 *Ubicación:* San Luis, Teusaquillo, Bogotá
-📐 *Área:* 1.068 m² (Lote 12x30m)
-💵 *Renta Actual:* $18.960.000 / Mes (Promedio)
-🚀 *Proyección:* +$30 Millones/mes
-
-✅ *Distribución de Ingresos:*
-- Local Comercial (40m²)
-- Clínica Odontológica (9 Consultorios + Recepción)
-- 9 Oficinas (2º Piso - Alquiladas)
-- 20 Habitaciones (Modelo Airbnb/Coliving - Pisos 3 y 4)
-- Coworking y Lavandería
-
-🔗 *Ver Reporte Detallado y Fotos:*
-https://edificio-teusaquillo-bogota.netlify.app/`
+    whatsappText: `🏢 *OPORTUNIDAD DE INVERSIÓN: EDIFICIO EN TEUSAQUILLO* \n\n📍 Ubicación: San Luis, Bogotá\n� Rentabilidad Actual: ~$19M/mes\n🚀 Potencial: +$30M/mes\n\nEste edificio de 4 niveles combina clínica, local y 20 habitaciones de coliving/Airbnb en una zona estratégica. \n\nVer ficha técnica completa aquí: \nhttps://edificio-teusaquillo-bogota.netlify.app/`
   }
 };
 
