@@ -550,6 +550,13 @@
            color: #1a1a1a;
            font-weight: 600;
         }
+
+        /* Apply Faux Glass to Footer as requested */
+        .footer {
+           background: linear-gradient(160deg, rgba(255, 255, 255, 0.45) 0%, rgba(255, 255, 255, 0.35) 100%);
+           border: 1px solid rgba(255, 255, 255, 0.5);
+           box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.6) !important;
+        }
       }
 
       /* Lightbox */
@@ -637,6 +644,7 @@
       /* Map */
       .map-container {
         padding: 10px;
+        background: rgba(255, 255, 255, 0.1); /* Fallback if map is blocked */
       }
       .map-container iframe {
         width: 100%;
