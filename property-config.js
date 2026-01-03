@@ -123,7 +123,7 @@ const propertyConfig = {
 • *2° Piso:* 9 Oficinas Ocupadas ($4.6M)
 • *3° y 4° Piso:* 20 Habitaciones (Airbnb/Coliving) + Zona Estudio ($9M promedio)
 🔗 *Ver Fotos y Ficha Técnica:*
-[https://edificio-teusaquillo-bogota.netlify.app/](https://edificio-teusaquillo-bogota.netlify.app/)`
+https://edificio-teusaquillo-bogota.netlify.app/`
   }
 };
 
