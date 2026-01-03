@@ -111,17 +111,21 @@ const propertyConfig = {
 
   share: {
     whatsappText: `🏢 *EDIFICIO EN VENTA - SAN LUIS, TEUSAQUILLO*
+
 💰 *Precio:* $3.000.000.000 COP
 📍 *Ubicación:* San Luis, Teusaquillo, Bogotá
 📏 *Lote:* 12x30m | *Área:* 1.068 m²
 🏢 *Construcción:* 4 Pisos (Antisísmica)
+
 🤑 *Renta Actual Total:* $18.960.000/mes
 📈 *ROI Anual:* 7.58%
 🚀 *Proyección:* +$30 Millones/mes
+
 ✅ *Distribución Real:*
 • *1° Piso:* Local ($2.4M) + Clínica ($2.9M) + Patio Amplio
 • *2° Piso:* 9 Oficinas Ocupadas ($4.6M)
 • *3° y 4° Piso:* 20 Habitaciones (Airbnb/Coliving) + Zona Estudio ($9M promedio)
+
 🔗 *Ver Fotos y Ficha Técnica:*
 https://edificio-teusaquillo-bogota.netlify.app/`
   }
