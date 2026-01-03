@@ -510,44 +510,45 @@
           box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
         }
 
-        /* Faux Glass & 3D Effect for Mobile */
+        /* Faux Glass & 3D Effect for Mobile - MATCHING PC TONES */
         .glass-card {
-           /* Gradient simulates light reflection on glass without transparency cost */
-           background: linear-gradient(145deg, rgba(255, 255, 255, 0.95) 0%, rgba(245, 245, 245, 0.9) 100%);
-           border: 1px solid rgba(255, 255, 255, 0.6);
-           /* Deep shadow for 3D "floating" effect */
+           /* Semi-transparent white to let the brown background show through (Matches PC) */
+           background: linear-gradient(160deg, rgba(255, 255, 255, 0.45) 0%, rgba(255, 255, 255, 0.35) 100%);
+           border: 1px solid rgba(255, 255, 255, 0.5);
+           /* Deep shadow for pop */
            box-shadow: 
-             0 10px 20px rgba(0, 0, 0, 0.15),
-             0 3px 6px rgba(0, 0, 0, 0.1),
-             inset 0 1px 0 rgba(255, 255, 255, 0.8) !important;
+             0 8px 32px rgba(0, 0, 0, 0.2),
+             inset 0 1px 0 rgba(255, 255, 255, 0.6) !important;
         }
         
         .spec-item, .amenity-item {
-            background: linear-gradient(135deg, #ffffff 0%, #f7f7f7 100%);
-            border: 1px solid rgba(212, 175, 55, 0.15); /* Subtle Gold Border */
-            /* Crisp shadow for "button" feel */
-            box-shadow: 
-              0 4px 6px rgba(62, 39, 35, 0.08),
-              0 1px 3px rgba(62, 39, 35, 0.05) !important;
-            transform: translateY(0);
-            transition: all 0.2s ease;
+            /* Slightly more opaque for readability but still "glassy" */
+            background: rgba(255, 255, 255, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05) !important;
         }
 
         .highlight-box {
-             background: linear-gradient(135deg, rgba(255, 248, 225, 0.95) 0%, rgba(255, 236, 179, 0.4) 100%);
+             background: rgba(255, 215, 0, 0.15); /* Warm Gold Tint */
              border-left: 4px solid #d4af37;
-             box-shadow: 0 4px 10px rgba(212, 175, 55, 0.15);
+             border: 1px solid rgba(212, 175, 55, 0.3);
         }
 
-        /* Typography tweaks for the new background */
+        /* Strong Contrast Text for Semi-Transparent Background */
         .spec-item .label {
-          color: #8d6e63 !important; /* Lighter brown for labels */
-          font-weight: 600;
+          color: #3e2723 !important; /* Capuccino Dark */
+          font-weight: 700;
+          text-shadow: 0 1px 1px rgba(255,255,255,0.5);
         }
         
         .spec-item .value {
-          color: #3e2723; /* Deep brown for values */
-          text-shadow: 0 1px 0 rgba(255,255,255,0.8);
+          color: #1a1a1a; 
+          font-weight: 800;
+        }
+        
+        .amenity-item {
+           color: #1a1a1a;
+           font-weight: 600;
         }
       }
 
