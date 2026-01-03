@@ -22,10 +22,15 @@ const propertyConfig = {
   },
 
   detalles: [
+    { label: "Área Const.", value: "1.068 m²", icon: "📐" },
+    { label: "Lote", value: "12 x 30 m", icon: "📏" },
+    { label: "Remodelado", value: "Hace 2 años", icon: "🛠️" },
+    { label: "Antigüedad", value: "Estructura Antisísmica", icon: "🏗️" },
+    { label: "Estrato", value: "4 (Comercial/Mixto)", icon: "✨" },
+    { label: "Estado", value: "Remodelado - Triple AAA", icon: "⭐" },
     { label: "ROI Est.", value: "7.58% Anual", icon: "📈" },
     { label: "Pisos", value: "4 Niveles", icon: "🏢" },
-    { label: "Unidades", value: "30+ Espacios", icon: "" },
-    { label: "Ubicación", value: "San Luis, Teusaquillo", icon: "📍" }
+    { label: "Unidades", value: "30+ Espacios", icon: "🔑" }
   ],
 
   caracteristicasInternas: [
@@ -63,28 +68,25 @@ const propertyConfig = {
   },
 
   descripcionFinal: {
-    titulo: "🚀 Análisis de Rentabilidad Detallado",
+    titulo: "🚀 Análisis de Rentabilidad y Potencial",
     texto: `
     <div class="roi-item">
-      <strong>💰 Ingresos Mensuales Actuales:</strong>
+      <strong>💰 Ingresos Mensuales Detallados:</strong>
       <ul class="roi-list">
-        <li><strong>Local Comercial (40m²):</strong> $2.400.000</li>
+        <li><strong>Local Comercial (Independiente):</strong> $2.400.000</li>
         <li><strong>Clínica Odontológica (9 Consult.):</strong> $2.900.000 (Neto)</li>
-        <li><strong>Piso 2 (9 Oficinas):</strong> $4.660.000</li>
-        <li><strong>Pisos 3 y 4 (20 Habs + Airbnb):</strong> $9.000.000 (Promedio)</li>
+        <li><strong>Piso 2 (9 Oficinas Ocupadas):</strong> $4.660.000</li>
+        <li><strong>Pisos 3 y 4 (Airbnb/Habitaciones):</strong> $9.000.000 (Promedio)</li>
       </ul>
-      <div class="projection" style="margin-top: 10px; font-weight: bold; color: #15803d;">
-        ROI ACTUAL: 7.58% Anual <span style="font-weight: normal; color: #333;">(Sobre inversión de $3.000M)</span>
+      <p style="margin-top:10px; font-size: 1.1em;">💵 <strong>TOTAL RENTA ACTUAL: $18.960.000 /mes</strong></p>
+
+      <div style="background: rgba(255, 193, 7, 0.1); border-left: 4px solid #ffc107; padding: 12px; margin: 15px 0; border-radius: 4px;">
+        ⚠️ <strong>Nota del Propietario:</strong> El ingreso de la clínica corresponde al 50% de su potencial real ($5.8M). El propietario actual (odontólogo) ocupa la otra mitad del espacio y equipos, lo que representa una oportunidad de incremento inmediato para un nuevo inversor.
       </div>
-    </div>
 
-    <div class="roi-item">
-      📈 <strong>Potencial de Expansión:</strong> Al activar las 10 habitaciones actualmente desocupadas, la proyección de renta supera los <strong>$30.000.000 COP mensuales</strong>.
-    </div>
-
-    <div class="roi-item">
-      <p>Este edificio es una oportunidad única para inversionistas que buscan un activo con flujo de caja inmediato y un potencial de crecimiento significativo. Su ubicación estratégica en Teusaquillo, Bogotá, garantiza una alta demanda para todos sus espacios, desde el local comercial y la clínica, hasta las oficinas y las habitaciones de coliving/Airbnb.</p>
-      <p>La versatilidad de sus espacios permite adaptarse a diversas estrategias de renta, maximizando la rentabilidad. Los acabados Triple AAA y el cableado estructurado aseguran una operación eficiente y de bajo mantenimiento.</p>
+      <div class="projection" style="background: rgba(16, 185, 129, 0.1); border-left: 4px solid #10b981; padding: 10px;">
+        <strong>ROI ACTUAL: 7.58% Anual</strong> (Calculado sobre inversión de $3.000M)
+      </div>
     </div>`
   },
 
@@ -109,21 +111,17 @@ const propertyConfig = {
     whatsappText: `🏢 *EDIFICIO EN VENTA - SAN LUIS, TEUSAQUILLO*
 💰 *Precio:* $3.000.000.000 COP
 📍 *Ubicación:* San Luis, Teusaquillo, Bogotá
-📐 *Área:* 1.068 m² (Lote 12x30m)
-🏢 *Construcción:* 4 Pisos
-🤑 *Renta Actual:* $18.960.000/mes
-📈 *ROI Total:* 7.58% Anual
+📏 *Lote:* 12x30m | *Área:* 1.068 m²
+🏢 *Construcción:* 4 Pisos (Antisísmica)
+🤑 *Renta Actual Total:* $18.960.000/mes
+📈 *ROI Anual:* 7.58%
 🚀 *Proyección:* +$30 Millones/mes
-
-✅ *Distribución:*
-• *1° Piso:* Local ($2.4M) + Clínica ($2.9M) + Patio
-• *2° Piso:* 9 Oficinas rentando ($4.6M)
-• *3° Piso:* 11 Habitaciones Airbnb + Cocina
-• *4° Piso:* 9 Habitaciones + Coworking + WiFi/TV
-*(Pisos 3 y 4 promedian $9M mensuales)*
-
-🔗 *Ver Fotos y Video:*
-https://edificio-teusaquillo-bogota.netlify.app/`
+✅ *Distribución Real:*
+• *1° Piso:* Local ($2.4M) + Clínica ($2.9M) + Patio Amplio
+• *2° Piso:* 9 Oficinas Ocupadas ($4.6M)
+• *3° y 4° Piso:* 20 Habitaciones (Airbnb/Coliving) + Coworking ($9M promedio)
+🔗 *Ver Fotos y Ficha Técnica:*
+[https://edificio-teusaquillo-bogota.netlify.app/](https://edificio-teusaquillo-bogota.netlify.app/)`
   }
 };
 
