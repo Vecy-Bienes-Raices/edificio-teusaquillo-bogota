@@ -7,10 +7,12 @@ const propertyConfig = {
     title: "Edificio en Venta y Rentando - San Luis, Teusaquillo | Alta Rentabilidad",
     description: "Inversión Inmobiliaria Bogotá: Edificio en San Luis Teusaquillo. Rentando $18.96M/mes. 4 Pisos, Local, Clínica, Oficinas y Airbnb. Gran potencial.",
     keywords: "Edificio en Venta Teusaquillo, Inversión Inmobiliaria Bogotá, Edificio Rentando San Luis, Venta Propiedad Raíz, Edificio con Local y Oficinas",
+    propertyId: "ID-BOG-ET01",
     ogUrl: "https://edificio-teusaquillo-bogota.netlify.app/",
     ogImage: "assets/1.png",
-    author: "",
-    copyright: ""
+    author: "Vecy Bienes Raíces",
+    copyright: "2026",
+    keywords: "edificio teusaquillo, inversion inmobiliaria bogota, rentabilidad inmobiliaria, vecy bienes raices, edificio san luis bogota"
   },
   
   infoPrincipal: {
@@ -88,8 +90,13 @@ const propertyConfig = {
         ℹ️ <strong>Zona de Trabajo:</strong> El espacio del 4º piso es un beneficio exclusivo para los inquilinos.
       </div>
 
-      <div class="projection" style="background: rgba(16, 185, 129, 0.1); border-left: 4px solid #10b981; padding: 10px;">
+      <div class="projection" style="background: rgba(16, 185, 129, 0.1); border-left: 4px solid #10b981; padding: 10px; margin-bottom: 20px;">
         <strong>ROI ACTUAL: 7.58% Anual</strong> (Calculado sobre inversión de $3.000M)
+      </div>
+      <div style="text-align: center;">
+          <a href="analisis.html" class="btn-analisis">
+             📊 VER ANÁLISIS TÉCNICO COMPLETO
+          </a>
       </div>
     </div>`
   },

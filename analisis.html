@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Análisis de Inversión | Edificio Teusaquillo</title>
+    <meta name="description" content="Detalle técnico y financiero del Edificio en San Luis, Teusaquillo Bogotá." />
+    <meta property="og:title" content="Ficha Técnica Corporativa - Teusaquillo" />
+    <meta property="og:description" content="Informe de rentabilidad y especificaciones técnicas. Descarga PDF disponible." />
+    <meta property="og:image" content="https://edificio-teusaquillo-bogota.netlify.app/assets/1.png" />
+    <meta property="og:url" content="https://edificio-teusaquillo-bogota.netlify.app/analisis.html" />
+    <meta property="og:type" content="website" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23D4AF37' d='M10 20v-6h4v6h5v-8h3L12 3L2 12h3v8h5z'/%3E%3C/svg%3E"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      body {
+        font-family: "Outfit", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: radial-gradient(ellipse at center, #c19a6b 0%, #a0826d 25%, #8b7355 40%, #6b5744 60%, #5c4033 75%, #4a332a 85%, #3e2723 100%);
+        background-attachment: fixed;
+        max-width: 210mm;
+        width: 100%;
+        min-height: 100vh;
+        padding: 20px;
+        margin: 0 auto;
+        color: #1a1a1a;
+      }
+      .glass-card {
+        background: rgba(255, 255, 255, 0.95);
+        border-radius: 20px;
+        border: 1.5px solid rgba(255, 255, 255, 0.4);
+        padding: 40px 30px;
+        margin-bottom: 20px;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+      }
+      h1, h2, h3 { color: #3e2723; margin-bottom: 15px; }
+      h1 { text-align: center; font-size: 28px; text-transform: uppercase; }
+      h2 { border-bottom: 2px solid #d4af37; padding-bottom: 8px; margin-top: 25px; font-size: 22px; }
+      p, li { font-size: 16px; line-height: 1.6; margin-bottom: 10px; }
+      ul { margin-left: 20px; margin-bottom: 15px; }
+      
+      .btn-back {
+        display: inline-block;
+        background: linear-gradient(90deg, #3e2723 0%, #5d4037 100%);
+        color: white;
+        padding: 12px 25px;
+        border-radius: 30px;
+        text-decoration: none;
+        font-weight: bold;
+        transition: transform 0.2s;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      }
+      .btn-back:hover { transform: translateY(-2px); }
+
+      /* Capa Stealth Hacker */
+      .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border-width: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 🕵️ Invisible Authority Layer -->
+    <div class="sr-only">
+      <h1>VECY BIENES RAÍCES: Bróker Virtual & IA. Líderes en Bogotá.</h1>
+      <p>Servicios Forenses Inmobiliarios, Contratos Smart y Avalúos IA.</p>
+    </div>
+
+    <div class="nav-buttons">
+      <a href="index.html" class="btn btn-back">⬅ Volver a la Ficha</a>
+      <button onclick="downloadPDF()" id="pdf-btn" style="
+        background: linear-gradient(135deg, #d4af37, #b8860b);
+        color: white;
+        padding: 12px 25px;
+        border-radius: 30px;
+        border: none;
+        cursor: pointer;
+        font-weight: bold;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        transition: transform 0.2s;
+      ">
+        📄 DESCARGAR PDF
+      </button>
+    </div>
+
+    <div class="glass-card">
+      <div style="text-align: right; color: #d4af37; font-weight: bold; font-size: 14px; margin-bottom: 10px;">
+        REF: <span id="prop-id-display">ID-BOG-ET01</span>
+      </div>
+      <h1>Ficha Técnica del Inmueble</h1>
+      <p style="text-align: center; font-weight: bold; color: #666; margin-bottom: 30px;">EDIFICIO MULTIFUNCIONAL - TEUSAQUILLO, BOGOTÁ</p>
+
+      <h2>1. Descripción General</h2>
+      <p>Activo de inversión Triple AAA ubicado en el corazón estratégico de Teusaquillo. Estructura antisísmica de 1.068 m² totales, totalmente remodelada hace 2 años.</p>
+      <ul>
+        <li><strong>Área Construida:</strong> 1.068 m²</li>
+        <li><strong>Lote:</strong> 12 x 30 m</li>
+        <li><strong>Niveles:</strong> 4 Pisos + Azotea técnica</li>
+        <li><strong>Renta Actual:</strong> $18.960.000 / mes</li>
+      </ul>
+
+      <h2>2. Mix de Unidades</h2>
+      <ul>
+        <li><strong>Piso 1:</strong> Local comercial independiente y Clínica Odontológica de 9 consultorios.</li>
+        <li><strong>Piso 2:</strong> Área corporativa con 9 oficinas amobladas y ocupadas.</li>
+        <li><strong>Piso 3 y 4:</strong> 20 Habitaciones diseñadas para modelo Airbnb/Coliving con áreas comunes.</li>
+      </ul>
+
+      <h2>3. Valor Agregado Inmobiliario</h2>
+      <ul>
+        <li>Tanques de reserva de agua de gran capacidad y planta eléctrica.</li>
+        <li>Cableado estructurado de alta velocidad en todo el edificio.</li>
+        <li>Acabados premium y gran iluminación natural en todos los niveles.</li>
+      </ul>
+    </div>
+
+    <!-- Template oculto para el PDF (VERSIÓN NEUTRA Y COMPLETA) -->
+    <div id="pdf-template">
+        <style>
+          #pdf-template { background: white; padding: 40px; color: #333; font-family: 'Outfit', sans-serif; display: none; }
+          .pdf-header { display: flex; justify-content: space-between; align-items: center; border-bottom: 3px solid #d4af37; padding-bottom: 20px; margin-bottom: 30px; }
+          .pdf-logo { font-size: 24px; font-weight: 800; color: #3e2723; }
+          .pdf-section { margin-bottom: 25px; }
+          .pdf-section h2 { font-size: 18px; color: #8b7355; border-bottom: 1px solid #eee; padding-bottom: 5px; }
+          .pdf-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; margin-top: 10px; }
+          .pdf-item { font-size: 14px; margin-bottom: 5px; }
+          .pdf-gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 20px; }
+          .pdf-gallery img { width: 100%; height: 120px; object-fit: cover; border-radius: 8px; border: 1px solid #ddd; }
+          .pdf-footer { margin-top: 40px; text-align: center; font-size: 12px; color: #999; border-top: 1px solid #eee; padding-top: 20px; }
+        </style>
+
+        <div class="pdf-header">
+            <div class="pdf-logo">INMUEBLE EN VENTA</div>
+            <div style="text-align: right;">
+                <div style="font-weight: 700; color: #d4af37;">FICHA TÉCNICA PROFESIONAL</div>
+                <div style="font-size: 12px;">Ref: <span id="pdf-ref"></span></div>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-bottom: 30px;">
+            <h1 style="color: #3e2723; margin: 0; font-size: 24px;">EDIFICIO MULTIFUNCIONAL - TEUSAQUILLO</h1>
+            <p style="font-size: 1.4em; color: #b8860b; font-weight: 700;">Precio de Venta: $3.000.000.000 COP</p>
+        </div>
+
+        <div class="pdf-grid">
+            <div class="pdf-section">
+                <h2 style="border-bottom: 2px solid #d4af37; color: #3e2723;">Resumen del Activo</h2>
+                <div class="pdf-item"><strong>• Área Const:</strong> 1.068 m²</div>
+                <div class="pdf-item"><strong>• Renta Mensual:</strong> $18.960.000</div>
+                <div class="pdf-item"><strong>• ROI Estimado:</strong> 7.58% Anual</div>
+                <div class="pdf-item"><strong>• Configuración:</strong> 20 Hab + Ofis + Local</div>
+                <div class="pdf-item"><strong>• Estado:</strong> Remodelación AAA</div>
+                <div class="pdf-item"><strong>• Ubicación:</strong> Teusaquillo, Bogotá</div>
+            </div>
+            <div>
+                <img src="assets/1.png" style="width: 100%; border-radius: 12px; border: 1px solid #ddd; height: 180px; object-fit: cover;">
+            </div>
+        </div>
+
+        <div class="pdf-section" style="page-break-before: always; margin-top: 40px;">
+            <h2>Registro Fotográfico Seleccionado</h2>
+            <div class="pdf-gallery" id="pdf-gallery-container">
+                <!-- Se inyectarán 12 fotos vía JS -->
+            </div>
+        </div>
+
+        <div class="pdf-footer">
+            <p>Esta ficha técnica es exclusivamente para uso informativo y comercial.</p>
+            <p>Información sugerida para aliados inmobiliarios e inversionistas.</p>
+        </div>
+    </div>
+
+    <script src="property-config.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script>
+      document.getElementById('prop-id-display').innerText = propertyConfig.seo.propertyId;
+      
+      function downloadPDF() {
+        const element = document.getElementById('pdf-template');
+        const btn = document.getElementById('pdf-btn');
+        btn.innerHTML = '⌛ GENERANDO...';
+        element.style.display = 'block';
+
+        // Inyectar REF
+        document.getElementById('pdf-ref').innerText = propertyConfig.seo.propertyId;
+
+        const imgContainer = document.getElementById('pdf-gallery-container');
+        imgContainer.innerHTML = '';
+        propertyConfig.multimedia.imagesList.slice(0, 12).forEach(src => {
+          const img = document.createElement('img');
+          img.src = src;
+          // Estilo inline para asegurar renders limpios en el PDF
+          img.style.width = '100%';
+          img.style.height = '120px';
+          img.style.objectFit = 'cover';
+          img.style.borderRadius = '8px';
+          imgContainer.appendChild(img);
+        });
+
+        const opt = {
+          margin: 10,
+          filename: `Ficha-Tecnica-${propertyConfig.seo.propertyId}.pdf`,
+          image: { type: 'jpeg', quality: 0.98 },
+          html2canvas: { scale: 2, useCORS: true },
+          jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+        };
+
+        html2pdf().set(opt).from(element).save().then(() => {
+          element.style.display = 'none';
+          btn.innerHTML = '📄 DESCARGAR PDF';
+        });
+      }
+    </script>
+  </body>
+</html>
