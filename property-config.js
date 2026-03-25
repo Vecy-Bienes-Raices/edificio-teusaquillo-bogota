@@ -72,8 +72,13 @@ const propertyConfig = {
   descripcionFinal: {
     titulo: "🚀 Análisis de Rentabilidad y Potencial",
     texto: `
-    <div class="roi-item" style="text-align: center;">
-      <p style="margin-bottom: 25px; font-size: 1.1em; color: #4a332a;"><strong>Oportunidad de Inversión Triple AAA:</strong> Edificio con alta rentabilidad operativa y potencial de optimización inmediata en Teusaquillo.</p>
+    <div class="roi-item" style="text-align: center; border-top: 1px solid rgba(212,175,55,0.3); padding-top: 20px;">
+      <p style="margin-bottom: 15px; font-size: 1.15em; color: #3e2723;"><strong>💸 Análisis de Activo Híbrido:</strong></p>
+      <ul style="list-style: none; padding: 0; margin-bottom: 20px; display: inline-block; text-align: left;">
+        <li style="margin-bottom: 8px;">✅ <strong>Renta Actual:</strong> $18.960.000 (Local + Clínica + Oficinas).</li>
+        <li style="margin-bottom: 8px;">✅ <strong>Potencial Inmediato:</strong> +$14.000.000 (20 Unidades Airbnb).</li>
+        <li style="margin-bottom: 8px;">🚀 <strong>Proyección Total:</strong> $33.000.000 / mes (ROI > 12%).</li>
+      </ul>
       <div style="text-align: center;">
           <a href="analisis.html" class="btn-analisis">
               📋 VER MÁS DETALLES DEL EDIFICIO
