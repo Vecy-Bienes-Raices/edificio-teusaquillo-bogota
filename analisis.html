@@ -4,173 +4,181 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Informe Técnico - Edificio Teusaquillo</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
-        :root { --gold: #d4af37; --dark: #1a1a1a; --grey: #f9f9f9; }
+        :root { --gold: #d4af37; --coffee: #3e2723; --cream: #fdfbf0; }
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Inter', sans-serif; background: #333; color: var(--dark); line-height: 1.5; }
+        body { font-family: 'Outfit', sans-serif; background: radial-gradient(ellipse at center, #c19a6b 0%, #3e2723 100%); background-attachment: fixed; min-height: 100vh; padding: 20px; color: #1a1a1a; }
         
-        .nav-ui { background: white; padding: 15px; display: flex; justify-content: center; gap: 20px; position: sticky; top: 0; z-index: 100; box-shadow: 0 4px 15px rgba(0,0,0,0.4); }
-        .btn { padding: 10px 25px; border-radius: 5px; text-decoration: none; font-weight: 700; font-size: 13px; cursor: pointer; border: none; }
-        .btn-black { background: var(--dark); color: white; }
-        .btn-gold { background: var(--gold); color: white; }
-
-        #export-container { width: 210mm; margin: 40px auto; background: white; box-shadow: 0 0 50px rgba(0,0,0,0.5); }
+        .nav-ui { max-width: 800px; margin: 0 auto 20px auto; display: flex; justify-content: space-between; gap: 15px; }
         
-        .page { 
-            width: 210mm; 
-            height: 297mm; 
-            padding: 25mm 22mm; 
-            display: flex; 
-            flex-direction: column; 
-            justify-content: space-between; 
-            page-break-after: always; 
-            background: white;
-            position: relative;
+        /* BOTÓN GOLD DNA (RESTAURADO) */
+        .btn-gold {
+            background: linear-gradient(180deg, #FFD700 0%, #FDB931 50%, #DAA520 100%);
+            color: #3E2723; border: none; padding: 12px 25px; font-size: 14px; font-weight: 900;
+            border-radius: 50px; cursor: pointer; text-align: center;
+            box-shadow: 0 4px 0 #B8860B, 0 8px 15px rgba(0, 0, 0, 0.3);
+            text-transform: uppercase; letter-spacing: 1px; text-decoration: none;
+            transition: all 0.2s;
+        }
+        .btn-gold:hover { transform: translateY(-2px); box-shadow: 0 6px 0 #B8860B, 0 12px 20px rgba(0, 0, 0, 0.4); }
+        
+        .btn-black {
+            background: #1a1a1a; color: white; padding: 12px 25px; border-radius: 50px;
+            font-weight: 700; text-decoration: none; font-size: 14px; box-shadow: 0 4px 0 #000;
         }
 
-        .header-ref { font-size: 11px; font-weight: 800; letter-spacing: 5px; color: #bbb; text-align: center; }
-        .footer-note { font-size: 9px; text-align: center; color: #ddd; letter-spacing: 2px; text-transform: uppercase; }
+        #export-container { width: 210mm; margin: 0 auto; background: white; overflow: hidden; }
 
-        .content-body { flex-grow: 1; display: flex; flex-direction: column; justify-content: center; }
+        .page {
+            width: 210mm;
+            height: 296mm; /* Un milímetro menos para evitar saltos fantasma */
+            padding: 20mm;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            page-break-after: always;
+            overflow: hidden; /* Seguridad nuclear contra páginas en blanco */
+            position: relative;
+            background: white;
+        }
 
-        h1 { font-size: 40px; font-weight: 800; text-align: center; color: var(--dark); margin: 15px 0; letter-spacing: -1.5px; }
-        h2 { font-size: 18px; font-weight: 800; border-bottom: 2px solid var(--gold); padding-bottom: 8px; margin-bottom: 25px; text-transform: uppercase; letter-spacing: 1.5px; }
-        h3 { font-size: 15px; font-weight: 700; color: var(--gold); margin-bottom: 12px; }
+        .content-center { flex-grow: 1; display: flex; flex-direction: column; justify-content: center; }
 
-        .hero-image { width: 100%; height: 680px; background-size: cover; background-position: center; border: 1px solid #eee; border-radius: 4px; }
+        .header-ref { font-size: 10px; font-weight: 800; color: #ccc; text-align: center; letter-spacing: 4px; }
+        .footer-note { font-size: 9px; text-align: center; color: #eee; letter-spacing: 2px; }
 
-        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
-        .text-block { font-size: 14px; color: #444; text-align: justify; }
-        .desc-list { list-style: none; }
-        .desc-list li { margin-bottom: 12px; font-size: 13px; border-bottom: 1px solid #f0f0f0; padding-bottom: 8px; display: flex; justify-content: space-between; }
-        .desc-list li strong { color: var(--dark); }
-
-        /* Dashboard de Autoridad Financial */
-        .roi-card { background: white; border: 1px solid #eee; padding: 25px; text-align: center; display: flex; flex-direction: column; justify-content: center; }
-        .roi-card.gold-border { border: 2.5px solid var(--gold); }
-        .roi-val { font-size: 36px; font-weight: 800; margin: 8px 0; }
+        h1 { font-size: 44px; font-weight: 800; text-align: center; color: var(--coffee); margin-bottom: 20px; letter-spacing: -1px; }
+        h2 { font-size: 20px; font-weight: 800; border-bottom: 3px solid var(--gold); padding-bottom: 10px; margin-bottom: 30px; color: var(--coffee); }
         
-        .bar-container { display: flex; align-items: flex-end; justify-content: center; gap: 60px; height: 180px; margin: 40px 0; border-bottom: 2px solid #f0f0f0; }
-        .bar { width: 60px; border-radius: 4px 4px 0 0; position: relative; transition: height 1s; }
-        .bar-tag { position: absolute; top: -25px; width: 100%; text-align: center; font-weight: 800; font-size: 12px; }
+        .hero-img { width: 100%; height: 720px; background-size: cover; background-position: center; border: 2px solid var(--gold); border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
 
-        .gallery-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; height: 780px; }
-        .gallery-img { width: 100%; height: 100%; object-fit: cover; border: 1px solid #f0f0f0; border-radius: 2px; }
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 35px; }
+        .data-card { background: #fafafa; padding: 25px; border-radius: 15px; border: 1px solid #f0f0f0; }
+        .spec-list { list-style: none; }
+        .spec-list li { margin-bottom: 12px; font-size: 14px; border-bottom: 1px solid #eee; padding-bottom: 8px; display: flex; justify-content: space-between; }
+        
+        /* Dashboard ROI Gold */
+        .roi-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 20px; }
+        .roi-box { padding: 30px; text-align: center; border: 1px solid #eee; border-radius: 15px; }
+        .roi-box.gold { border: 3px solid var(--gold); background: var(--cream); }
+        .roi-val { font-size: 40px; font-weight: 900; color: var(--coffee); }
+        
+        .bar-chart { display: flex; align-items: flex-end; justify-content: center; gap: 60px; height: 180px; margin: 40px 0; border-bottom: 3px solid #eee; }
+        .bar { width: 65px; border-radius: 8px 8px 0 0; position: relative; }
+        .bar-label { position: absolute; top: -30px; width: 100%; text-align: center; font-weight: 800; color: var(--coffee); font-size: 14px; }
+
+        .gallery-grid { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: repeat(3, 1fr); gap: 15px; height: 820px; }
+        .gallery-img { width: 100%; height: 100%; object-fit: cover; border-radius: 10px; border: 1px solid #eee; }
 
         @media print {
             body { background: white; padding: 0; }
             .nav-ui { display: none; }
-            #export-container { margin: 0; box-shadow: none; }
+            #export-container { margin: 0; width: 100%; }
         }
     </style>
 </head>
 <body>
 
     <div class="nav-ui">
-        <a href="index.html" class="btn btn-black">← VOLVER</a>
-        <button onclick="downloadPDF()" class="btn btn-gold">DESCARGAR BROCHURE FINAL (CONTENIDO RESTAURADO)</button>
+        <a href="index.html" class="btn-black">← VOLVER</a>
+        <button onclick="downloadPDF()" class="btn-gold">DESCARGAR BROCHURE GOLD (RESTAURADO)</button>
     </div>
 
     <div id="export-container">
         
-        <!-- PAG 1: PORTADA -->
+        <!-- P1: PORTADA -->
         <div class="page">
-            <div class="header-ref">DOCUMENTO TÉCNICO - REF: <span class="ref-id">ET01</span></div>
-            <div class="content-body">
+            <div class="header-ref">REF: <span class="prop-id">ET01</span></div>
+            <div class="content-center">
                 <h1>FICHA TÉCNICA</h1>
-                <div class="hero-image" style="background-image: url('assets/1.png');"></div>
-                <div style="margin-top: 25px; text-align: center; font-size: 1.4em; font-weight: 300; letter-spacing: 3px; color: #777;">EDIFICIO COMERCIAL MULTIFUNCIONAL</div>
+                <div class="hero-img" style="background-image: url('assets/1.png');"></div>
+                <div style="margin-top: 30px; text-align: center; font-size: 18px; color: #666; font-weight: 300; letter-spacing: 5px;">ACTIVO MULTIFUNCIONAL - TEUSAQUILLO</div>
             </div>
-            <div class="footer-note">CONFIDENCIAL - DISTRIBUCIÓN AUTORIZADA PARA ALIADOS</div>
+            <div class="footer-note">DOCUMENTO CONFIDENCIAL - MARCA BLANCA PARA ALIADOS</div>
         </div>
 
-        <!-- PAG 2: DESCRIPCIÓN Y ESPECIFICACIONES -->
+        <!-- P2: SPECS -->
         <div class="page">
-            <div class="header-ref">GENERAL SPECIFICATIONS / 02</div>
-            <div class="content-body">
-                <h2>1. Descripción Detallada del Activo</h2>
+            <div class="header-ref">TECHNICAL ANALYSIS / 02</div>
+            <div class="content-center">
+                <h2>1. Descripción del Activo</h2>
                 <div class="grid-2">
-                    <div class="text-block" id="full-desc-text">
-                        <!-- Inyectado logicamente -->
+                    <div class="data-card" id="desc-text" style="font-size: 14px; line-height: 1.7; text-align: justify;">
+                        <!-- Inyectado -->
                     </div>
                     <div>
-                        <h3>Especificaciones Base</h3>
-                        <ul class="desc-list" id="specs-list-container">
-                            <!-- Inyectado dinámicamente -->
+                        <h3 style="margin-bottom: 20px; font-weight: 700; color: var(--gold);">Especificaciones Técnicas</h3>
+                        <ul class="spec-list" id="specs-list">
+                            <!-- Inyectado -->
                         </ul>
                     </div>
                 </div>
             </div>
-            <div class="footer-note">ID-BOG-ET01 - PÁGINA 02</div>
+            <div class="footer-note">PÁGINA 02 | ID-BOG-ET01</div>
         </div>
 
-        <!-- PAG 3: INFRAESTRUCTURA Y DISTRIBUCIÓN -->
+        <!-- P3: LAYOUT -->
         <div class="page">
-            <div class="header-ref">INFRASTRUCTURE & LAYOUT / 03</div>
-            <div class="content-body">
+            <div class="header-ref">BUILDING LAYOUT / 03</div>
+            <div class="content-center">
                 <div class="grid-2">
                     <div>
-                        <h2>2. Distribución por Niveles</h2>
-                        <ul class="desc-list" id="amenities-list-container" style="font-size: 11px;">
-                            <!-- Inyectado dinámicamente -->
+                        <h2>2. Distribución de Unidades</h2>
+                        <ul class="spec-list" id="layout-list" style="font-size: 12px;">
+                            <!-- Inyectado -->
                         </ul>
                     </div>
                     <div>
-                        <h2>3. Infraestructura Técnica</h2>
-                        <div class="text-block" style="background: #fafafa; padding: 20px; border-left: 3px solid var(--gold);">
-                            <p id="infra-text">Estructura NSR-10 Sismo-Reforzada con remodelación integral nivel Triple AAA finalizada hace 24 meses. Cuenta con planta eléctrica de soporte total, tanques de reserva de agua potable y cableado estructurado Categoría 6A en todos los niveles operativos.</p>
+                        <h2>3. Infraestructura</h2>
+                        <div class="data-card" style="border-left: 6px solid var(--gold);">
+                            <p style="font-size: 14px;">Estructura NSR-10 con remodelación integral nivel corporativo. Planta eléctrica total, tanques industriales y cableado 6A.</p>
                         </div>
-                        <h2 style="margin-top: 30px;">4. Seguridad Jurídica</h2>
-                        <div class="text-block">
-                            <p id="legal-text">Uso de suelo mixto (Comercial/Servicios) compatible con Salud, Oficinas y Educación. Tradición impecable sin gravámenes.</p>
-                        </div>
+                        <h2 style="margin-top: 40px;">4. Seguridad Legal</h2>
+                        <p style="font-size: 14px; color: #444;">Uso Mixto (Comercial y Servicios). Títulos al día, sin deudas ni gravámenes. Lista para traspaso.</p>
                     </div>
                 </div>
             </div>
-            <div class="footer-note">ID-BOG-ET01 - PÁGINA 03</div>
+            <div class="footer-note">PÁGINA 03 | ID-BOG-ET01</div>
         </div>
 
-        <!-- PAG 4: DANSBOARD DE RENTABILIDAD -->
+        <!-- P4: ROI -->
         <div class="page">
             <div class="header-ref">FINANCIAL PERFORMANCE / 04</div>
-            <div class="content-body">
-                <h2 style="text-align: center; border: none; margin-bottom: 40px;">Análisis de Retorno de Inversión (ROI)</h2>
-                <div class="grid-2">
-                    <div class="roi-card">
-                        <div style="font-size: 10px; font-weight: 800; color: #999;">RENTA ACTUAL BASE</div>
+            <div class="content-center">
+                <h2 style="text-align:center; border:none; margin-bottom: 40px;">Análisis de Rentabilidad</h2>
+                <div class="roi-grid">
+                    <div class="roi-box">
+                        <div style="font-size: 11px; font-weight: 800; color: #999;">RENTA ACTUAL</div>
                         <div class="roi-val" style="color: #10b981;">7.58%</div>
-                        <div style="font-size: 13px; font-weight: 600;">$18,960,000 / MES</div>
+                        <div style="font-size: 14px;">$18,960,000 / MES</div>
                     </div>
-                    <div class="roi-card gold-border">
-                        <div style="font-size: 10px; font-weight: 800; color: var(--gold);">POTENCIAL OPTIMIZADO</div>
-                        <div class="roi-val" style="color: var(--dark);">$33.0M</div>
-                        <div style="font-size: 13px; font-weight: 600;">ROI PROYECTADO: 13.20%</div>
+                    <div class="roi-box gold">
+                        <div style="font-size: 11px; font-weight: 800; color: var(--gold);">OPTIMIZADO POTENCIAL</div>
+                        <div class="roi-val" style="color: var(--coffee);">$33.0M</div>
+                        <div style="font-size: 14px; font-weight: 700;">ROI ESTIMADO: 13.20%</div>
                     </div>
                 </div>
 
-                <div class="bar-container">
-                    <div class="bar" style="height: 100px; background: #10b981;"><div class="bar-tag" style="color:#10b981">$18.9M</div></div>
-                    <div class="bar" style="height: 175px; background: var(--gold);"><div class="bar-tag" style="color:var(--gold)">$33.0M</div></div>
+                <div class="bar-chart">
+                    <div class="bar" style="height: 110px; background: #10b981;"><div class="bar-label" style="color:#10b981">$18.9M</div></div>
+                    <div class="bar" style="height: 200px; background: var(--gold);"><div class="bar-label" style="color:var(--gold)">$33.0M</div></div>
                 </div>
 
-                <div style="background: var(--grey); padding: 25px; border-left: 5px solid #3b82f6;">
-                    <h3 style="color: #1e40af; margin-bottom: 5px;">Nota de Escalabilidad</h3>
-                    <p style="font-size: 13px; color: #555;">La inversión permite una optimización inmediata del 74% en el flujo de caja mediante la habilitación de los niveles 3 y 4 bajo el modelo de rentas cortas (Airbnb/Coliving).</p>
+                <div style="background: #eef2ff; padding: 25px; border-radius: 15px; border-left: 6px solid #3b82f6;">
+                    <p style="font-size: 14px; color: #1e40af;"><strong>Proyección:</strong> El activo permite una escalabilidad del 74% mediante el modelo de rentas cortas en los pisos 3 y 4.</p>
                 </div>
             </div>
-            <div class="footer-note">ID-BOG-ET01 - PÁGINA 04</div>
+            <div class="footer-note">PÁGINA 04 | ID-BOG-ET01</div>
         </div>
 
-        <!-- PAG 5: PORTFOLIO VISUAL -->
+        <!-- P5: GALLERY -->
         <div class="page">
-            <div class="header-ref">PORTFOLIO VISUAL / 05</div>
-            <div class="content-body">
-                <div id="gallery-target" class="gallery-grid">
-                    <!-- Dinámico -->
-                </div>
+            <div class="header-ref">VISUAL WALKTHROUGH / 05</div>
+            <div class="content-center">
+                <div id="gallery-box" class="gallery-grid"></div>
             </div>
-            <div class="footer-note">ID-BOG-ET01 - PÁGINA 05</div>
+            <div class="footer-note">PÁGINA 05 | ID-BOG-ET01</div>
         </div>
 
     </div>
@@ -178,57 +186,41 @@
     <script src="property-config.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
     <script>
-        // Restauración de Contenido desde propertyConfig
-        document.querySelectorAll('.ref-id').forEach(el => el.innerText = propertyConfig.seo.propertyId);
+        document.querySelectorAll('.prop-id').forEach(el => el.innerText = propertyConfig.seo.propertyId);
+        document.getElementById('desc-text').innerHTML = propertyConfig.destacadoInterno;
         
-        // P2: Descripción Larga
-        document.getElementById('full-desc-text').innerHTML = propertyConfig.destacadoInterno;
-        
-        // P2: Specs Base
-        const specsCont = document.getElementById('specs-list-container');
-        propertyConfig.detalles.slice(0, 6).forEach(d => {
+        const sList = document.getElementById('specs-list');
+        propertyConfig.detalles.slice(0, 7).forEach(d => {
             const li = document.createElement('li');
             li.innerHTML = `<span>${d.icon} ${d.label}</span> <strong>${d.value}</strong>`;
-            specsCont.appendChild(li);
+            sList.appendChild(li);
         });
 
-        // P3: Distribución (Amenities)
-        const amenCont = document.getElementById('amenities-list-container');
+        const lList = document.getElementById('layout-list');
         propertyConfig.caracteristicasInternas.forEach(a => {
             const li = document.createElement('li');
             li.innerHTML = `<span>${a.emoji} ${a.name}</span>`;
-            amenCont.appendChild(li);
+            lList.appendChild(li);
         });
 
-        // P5: Galería 2x3
-        function initGallery() {
-            const container = document.getElementById('gallery-target');
-            propertyConfig.multimedia.imagesList.slice(0, 6).forEach(src => {
-                const img = document.createElement('img');
-                img.src = src;
-                img.className = 'gallery-img';
-                container.appendChild(img);
-            });
-        }
-        initGallery();
+        const gBox = document.getElementById('gallery-box');
+        propertyConfig.multimedia.imagesList.slice(0, 6).forEach(src => {
+            const img = document.createElement('img');
+            img.src = src; img.className = 'gallery-img'; gBox.appendChild(img);
+        });
 
         function downloadPDF() {
             const element = document.getElementById('export-container');
             const btn = document.querySelector('.btn-gold');
             btn.innerText = 'GENERANDO PDF...';
-
             const opt = {
-                margin: 0,
-                filename: `Ficha-Tecnica-Neutral-${propertyConfig.seo.propertyId}.pdf`,
+                margin: 0, filename: `Brochure-Gold-${propertyConfig.seo.propertyId}.pdf`,
                 image: { type: 'jpeg', quality: 0.98 },
                 html2canvas: { scale: 2, useCORS: true },
                 jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
                 pagebreak: { mode: ['css', 'legacy'] }
             };
-
-            html2pdf().set(opt).from(element).save().then(() => {
-                btn.innerText = 'DESCARGAR BROCHURE FINAL';
-            });
+            html2pdf().set(opt).from(element).save().then(() => { btn.innerText = 'DESCARGAR BROCHURE GOLD (RESTAURADO)'; });
         }
     </script>
 </body>
