@@ -4,159 +4,64 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Informe Técnico - Edificio Teusaquillo</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --gold: #d4af37;
-            --dark: #1a1a1a;
-            --grey: #f5f5f5;
-        }
+        :root { --gold: #d4af37; --dark: #1a1a1a; --grey: #f9f9f9; }
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: 'Inter', sans-serif;
-            background: #222;
-            color: var(--dark);
-        }
+        body { font-family: 'Inter', sans-serif; background: #333; color: var(--dark); line-height: 1.5; }
         
-        .nav-ui {
-            background: white;
-            padding: 15px;
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.5);
-        }
-        .btn {
-            padding: 10px 25px;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 13px;
-            cursor: pointer;
-            border: none;
-        }
+        .nav-ui { background: white; padding: 15px; display: flex; justify-content: center; gap: 20px; position: sticky; top: 0; z-index: 100; box-shadow: 0 4px 15px rgba(0,0,0,0.4); }
+        .btn { padding: 10px 25px; border-radius: 5px; text-decoration: none; font-weight: 700; font-size: 13px; cursor: pointer; border: none; }
         .btn-black { background: var(--dark); color: white; }
         .btn-gold { background: var(--gold); color: white; }
 
-        #export-container {
-            width: 210mm;
-            margin: 40px auto;
+        #export-container { width: 210mm; margin: 40px auto; background: white; box-shadow: 0 0 50px rgba(0,0,0,0.5); }
+        
+        .page { 
+            width: 210mm; 
+            height: 297mm; 
+            padding: 25mm 22mm; 
+            display: flex; 
+            flex-direction: column; 
+            justify-content: space-between; 
+            page-break-after: always; 
             background: white;
-            box-shadow: 0 0 50px rgba(0,0,0,0.8);
-        }
-
-        .page {
-            width: 210mm;
-            height: 297mm;
-            padding: 25mm;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            page-break-after: always;
             position: relative;
-            background: white;
         }
 
-        /* Simetría Matemática Pura */
-        .content-center {
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
+        .header-ref { font-size: 11px; font-weight: 800; letter-spacing: 5px; color: #bbb; text-align: center; }
+        .footer-note { font-size: 9px; text-align: center; color: #ddd; letter-spacing: 2px; text-transform: uppercase; }
 
-        .header-ref {
-            font-size: 11px;
-            font-weight: 800;
-            letter-spacing: 5px;
-            color: #999;
-            text-align: center;
-        }
+        .content-body { flex-grow: 1; display: flex; flex-direction: column; justify-content: center; }
 
-        h1 { font-size: 42px; font-weight: 800; text-align: center; color: var(--dark); margin: 20px 0; letter-spacing: -2px; }
-        h2 { font-size: 20px; font-weight: 800; border-bottom: 2px solid var(--gold); padding-bottom: 10px; margin-bottom: 30px; text-transform: uppercase; letter-spacing: 1px; }
+        h1 { font-size: 40px; font-weight: 800; text-align: center; color: var(--dark); margin: 15px 0; letter-spacing: -1.5px; }
+        h2 { font-size: 18px; font-weight: 800; border-bottom: 2px solid var(--gold); padding-bottom: 8px; margin-bottom: 25px; text-transform: uppercase; letter-spacing: 1.5px; }
+        h3 { font-size: 15px; font-weight: 700; color: var(--gold); margin-bottom: 12px; }
+
+        .hero-image { width: 100%; height: 680px; background-size: cover; background-position: center; border: 1px solid #eee; border-radius: 4px; }
+
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+        .text-block { font-size: 14px; color: #444; text-align: justify; }
+        .desc-list { list-style: none; }
+        .desc-list li { margin-bottom: 12px; font-size: 13px; border-bottom: 1px solid #f0f0f0; padding-bottom: 8px; display: flex; justify-content: space-between; }
+        .desc-list li strong { color: var(--dark); }
+
+        /* Dashboard de Autoridad Financial */
+        .roi-card { background: white; border: 1px solid #eee; padding: 25px; text-align: center; display: flex; flex-direction: column; justify-content: center; }
+        .roi-card.gold-border { border: 2.5px solid var(--gold); }
+        .roi-val { font-size: 36px; font-weight: 800; margin: 8px 0; }
         
-        .hero-image {
-            width: 100%;
-            height: 700px;
-            background-size: cover;
-            background-position: center;
-            border: 1px solid #ddd;
-        }
+        .bar-container { display: flex; align-items: flex-end; justify-content: center; gap: 60px; height: 180px; margin: 40px 0; border-bottom: 2px solid #f0f0f0; }
+        .bar { width: 60px; border-radius: 4px 4px 0 0; position: relative; transition: height 1s; }
+        .bar-tag { position: absolute; top: -25px; width: 100%; text-align: center; font-weight: 800; font-size: 12px; }
 
-        .info-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-        }
-
-        .info-box {
-            background: var(--grey);
-            padding: 30px;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-        .info-box ul { list-style: none; }
-        .info-box li { margin-bottom: 15px; font-size: 14px; line-height: 1.6; border-bottom: 1px solid #eee; padding-bottom: 5px; }
-
-        /* Dashboard Simétrico */
-        .roi-card {
-            background: white;
-            border: 1px solid #eee;
-            padding: 30px;
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            min-height: 180px;
-        }
-        .roi-card.optimized { border: 2px solid var(--gold); }
-        .roi-val { font-size: 38px; font-weight: 800; color: var(--dark); margin: 5px 0; }
-        
-        .bar-container {
-            display: flex;
-            align-items: flex-end;
-            justify-content: center;
-            gap: 80px;
-            height: 250px;
-            margin: 50px 0;
-            border-bottom: 2px solid #eee;
-        }
-        .bar { width: 70px; border-radius: 4px 4px 0 0; position: relative; }
-        .bar-label { position: absolute; top: -30px; width: 100%; text-align: center; font-weight: 800; font-size: 14px; }
-
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            grid-template-rows: repeat(3, 1fr);
-            gap: 20px;
-            height: 800px;
-        }
-        .gallery-item {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border: 1px solid #eee;
-        }
-
-        .footer-note {
-            font-size: 10px;
-            text-align: center;
-            color: #ccc;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-        }
+        .gallery-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; height: 780px; }
+        .gallery-img { width: 100%; height: 100%; object-fit: cover; border: 1px solid #f0f0f0; border-radius: 2px; }
 
         @media print {
             body { background: white; padding: 0; }
             .nav-ui { display: none; }
-            #export-container { margin: 0; box-shadow: none; border: none; }
-            .page { border: none; }
+            #export-container { margin: 0; box-shadow: none; }
         }
     </style>
 </head>
@@ -164,138 +69,148 @@
 
     <div class="nav-ui">
         <a href="index.html" class="btn btn-black">← VOLVER</a>
-        <button onclick="downloadPDF()" class="btn btn-gold">DESCARGAR PDF NEUTRAL (SIMETRÍA 100%)</button>
+        <button onclick="downloadPDF()" class="btn btn-gold">DESCARGAR BROCHURE FINAL (CONTENIDO RESTAURADO)</button>
     </div>
 
     <div id="export-container">
-        <!-- PÁGINA 1: PORTADA -->
+        
+        <!-- PAG 1: PORTADA -->
         <div class="page">
-            <div class="header-ref">REF: <span id="ref-p1">ID-BOG-ET01</span></div>
-            <div class="content-center">
+            <div class="header-ref">DOCUMENTO TÉCNICO - REF: <span class="ref-id">ET01</span></div>
+            <div class="content-body">
                 <h1>FICHA TÉCNICA</h1>
                 <div class="hero-image" style="background-image: url('assets/1.png');"></div>
-                <div style="margin-top: 30px; text-align: center; font-weight: 300; font-size: 18px; letter-spacing: 2px; color: #666;">ACTIVO COMERCIAL MULTIFUNCIONAL</div>
+                <div style="margin-top: 25px; text-align: center; font-size: 1.4em; font-weight: 300; letter-spacing: 3px; color: #777;">EDIFICIO COMERCIAL MULTIFUNCIONAL</div>
             </div>
-            <div class="footer-note">CONFIDENCIAL - USO EXCLUSIVO PARA ALIADOS</div>
+            <div class="footer-note">CONFIDENCIAL - DISTRIBUCIÓN AUTORIZADA PARA ALIADOS</div>
         </div>
 
-        <!-- PÁGINA 2: ESPECIFICACIONES A -->
+        <!-- PAG 2: DESCRIPCIÓN Y ESPECIFICACIONES -->
         <div class="page">
-            <div class="header-ref">GENERAL SPECS / 02</div>
-            <div class="content-center">
-                <h2>1. Descripción del Activo</h2>
-                <div class="info-grid">
-                    <div class="info-box">
-                        <p style="font-weight: 600; margin-bottom: 20px;">Edificio corporativo estratégica en Teusaquillo, Bogotá. Remodelación integral 2024.</p>
-                        <ul>
-                            <li><strong>Área Total:</strong> 1.068 m²</li>
-                            <li><strong>Dimensión:</strong> 12m x 30m</li>
-                            <li><strong>Altura:</strong> 4 Niveles + Deck</li>
-                        </ul>
+            <div class="header-ref">GENERAL SPECIFICATIONS / 02</div>
+            <div class="content-body">
+                <h2>1. Descripción Detallada del Activo</h2>
+                <div class="grid-2">
+                    <div class="text-block" id="full-desc-text">
+                        <!-- Inyectado logicamente -->
                     </div>
-                    <div class="info-box">
-                        <ul>
-                            <li><strong>Estructura:</strong> NSR-10 Sismo-Resistente</li>
-                            <li><strong>Estado:</strong> 100% Ocupación/Operativo</li>
-                            <li><strong>Renta Mes:</strong> $18.96M (Base Actual)</li>
+                    <div>
+                        <h3>Especificaciones Base</h3>
+                        <ul class="desc-list" id="specs-list-container">
+                            <!-- Inyectado dinámicamente -->
                         </ul>
                     </div>
                 </div>
             </div>
-            <div class="footer-note">ID-BOG-ET01</div>
+            <div class="footer-note">ID-BOG-ET01 - PÁGINA 02</div>
         </div>
 
-        <!-- PÁGINA 3: ESPECIFICACIONES B -->
+        <!-- PAG 3: INFRAESTRUCTURA Y DISTRIBUCIÓN -->
         <div class="page">
-            <div class="header-ref">TECHNICAL FEATURES / 03</div>
-            <div class="content-center">
-                <div class="info-grid" style="grid-template-columns: 1fr;">
-                    <div class="info-box" style="background: white; border: 1px solid #eee; padding: 40px;">
-                        <h2 style="border-color: #eee;">2. Infraestructura Técnica</h2>
-                        <ul style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
-                            <li>• Planta eléctrica propia (Soporte 100%)</li>
-                            <li>• Tanques de reserva (Agua potable)</li>
-                            <li>• Red contra incendios centralizada</li>
-                            <li>• Cableado Estructurado Categoría 6A</li>
-                            <li>• Iluminación LED Automatizada</li>
-                            <li>• Ventanería Acústica de alto impacto</li>
+            <div class="header-ref">INFRASTRUCTURE & LAYOUT / 03</div>
+            <div class="content-body">
+                <div class="grid-2">
+                    <div>
+                        <h2>2. Distribución por Niveles</h2>
+                        <ul class="desc-list" id="amenities-list-container" style="font-size: 11px;">
+                            <!-- Inyectado dinámicamente -->
                         </ul>
                     </div>
-                    <div class="info-box" style="margin-top: 40px;">
-                        <h2>3. Seguridad Jurídica</h2>
-                        <p style="font-size: 14px; line-height: 1.8;">Uso de suelo comercial y de servicios totalmente compatible con Salud, Educación y Oficinas. Título de propiedad libre de gravámenes y afectaciones. Tradición documentada al 100%.</p>
+                    <div>
+                        <h2>3. Infraestructura Técnica</h2>
+                        <div class="text-block" style="background: #fafafa; padding: 20px; border-left: 3px solid var(--gold);">
+                            <p id="infra-text">Estructura NSR-10 Sismo-Reforzada con remodelación integral nivel Triple AAA finalizada hace 24 meses. Cuenta con planta eléctrica de soporte total, tanques de reserva de agua potable y cableado estructurado Categoría 6A en todos los niveles operativos.</p>
+                        </div>
+                        <h2 style="margin-top: 30px;">4. Seguridad Jurídica</h2>
+                        <div class="text-block">
+                            <p id="legal-text">Uso de suelo mixto (Comercial/Servicios) compatible con Salud, Oficinas y Educación. Tradición impecable sin gravámenes.</p>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="footer-note">ID-BOG-ET01</div>
+            <div class="footer-note">ID-BOG-ET01 - PÁGINA 03</div>
         </div>
 
-        <!-- PÁGINA 4: DASHBOARD FINANCIERO -->
+        <!-- PAG 4: DANSBOARD DE RENTABILIDAD -->
         <div class="page">
-            <div class="header-ref">FINANCIAL ANALYSIS / 04</div>
-            <div class="content-center">
-                <h2 style="text-align: center; border: none; margin-bottom: 50px;">Dashboard de Rentabilidad</h2>
-                <div class="info-grid">
+            <div class="header-ref">FINANCIAL PERFORMANCE / 04</div>
+            <div class="content-body">
+                <h2 style="text-align: center; border: none; margin-bottom: 40px;">Análisis de Retorno de Inversión (ROI)</h2>
+                <div class="grid-2">
                     <div class="roi-card">
-                        <div style="font-size: 11px; font-weight: 800; color: #999;">ROI ACTUAL</div>
+                        <div style="font-size: 10px; font-weight: 800; color: #999;">RENTA ACTUAL BASE</div>
                         <div class="roi-val" style="color: #10b981;">7.58%</div>
                         <div style="font-size: 13px; font-weight: 600;">$18,960,000 / MES</div>
                     </div>
-                    <div class="roi-card optimized">
-                        <div style="font-size: 11px; font-weight: 800; color: var(--gold);">ROI OPTIMIZADO</div>
-                        <div class="roi-val">13.20%</div>
-                        <div style="font-size: 13px; font-weight: 600;">$33,000,000 / MES</div>
+                    <div class="roi-card gold-border">
+                        <div style="font-size: 10px; font-weight: 800; color: var(--gold);">POTENCIAL OPTIMIZADO</div>
+                        <div class="roi-val" style="color: var(--dark);">$33.0M</div>
+                        <div style="font-size: 13px; font-weight: 600;">ROI PROYECTADO: 13.20%</div>
                     </div>
                 </div>
 
                 <div class="bar-container">
-                    <div class="bar" style="height: 120px; background: #10b981;">
-                        <div class="bar-label" style="color: #10b981;">$18.9M</div>
-                    </div>
-                    <div class="bar" style="height: 210px; background: var(--gold);">
-                        <div class="bar-label" style="color: var(--gold);">$33.0M</div>
-                    </div>
+                    <div class="bar" style="height: 100px; background: #10b981;"><div class="bar-tag" style="color:#10b981">$18.9M</div></div>
+                    <div class="bar" style="height: 175px; background: var(--gold);"><div class="bar-tag" style="color:var(--gold)">$33.0M</div></div>
                 </div>
 
-                <div style="background: var(--grey); padding: 30px; border-left: 5px solid #3b82f6;">
-                    <div style="font-weight: 800; margin-bottom: 10px; font-size: 13px;">ANÁLISIS DE ESCALABILIDAD</div>
-                    <p style="font-size: 13px; line-height: 1.6;">El inmueble posee un potencial de valorización de rentas del 74% mediante la habilitación del modelo de rentas cortas en los niveles superiores (3 y 4).</p>
+                <div style="background: var(--grey); padding: 25px; border-left: 5px solid #3b82f6;">
+                    <h3 style="color: #1e40af; margin-bottom: 5px;">Nota de Escalabilidad</h3>
+                    <p style="font-size: 13px; color: #555;">La inversión permite una optimización inmediata del 74% en el flujo de caja mediante la habilitación de los niveles 3 y 4 bajo el modelo de rentas cortas (Airbnb/Coliving).</p>
                 </div>
             </div>
-            <div class="footer-note">ID-BOG-ET01</div>
+            <div class="footer-note">ID-BOG-ET01 - PÁGINA 04</div>
         </div>
 
-        <!-- PÁGINA 5: GALERÍA -->
+        <!-- PAG 5: PORTFOLIO VISUAL -->
         <div class="page">
             <div class="header-ref">PORTFOLIO VISUAL / 05</div>
-            <div class="content-center">
-                <div id="gallery-container" class="gallery-grid">
+            <div class="content-body">
+                <div id="gallery-target" class="gallery-grid">
                     <!-- Dinámico -->
                 </div>
             </div>
-            <div class="footer-note">ID-BOG-ET01</div>
+            <div class="footer-note">ID-BOG-ET01 - PÁGINA 05</div>
         </div>
+
     </div>
 
     <script src="property-config.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
     <script>
-        // Configuración Dinámica
-        document.getElementById('ref-p1').innerText = propertyConfig.seo.propertyId;
+        // Restauración de Contenido desde propertyConfig
+        document.querySelectorAll('.ref-id').forEach(el => el.innerText = propertyConfig.seo.propertyId);
+        
+        // P2: Descripción Larga
+        document.getElementById('full-desc-text').innerHTML = propertyConfig.destacadoInterno;
+        
+        // P2: Specs Base
+        const specsCont = document.getElementById('specs-list-container');
+        propertyConfig.detalles.slice(0, 6).forEach(d => {
+            const li = document.createElement('li');
+            li.innerHTML = `<span>${d.icon} ${d.label}</span> <strong>${d.value}</strong>`;
+            specsCont.appendChild(li);
+        });
 
-        function loadGallery() {
-            const container = document.getElementById('gallery-container');
-            if (container) {
-                container.innerHTML = '';
-                propertyConfig.multimedia.imagesList.slice(0, 6).forEach(src => {
-                    const img = document.createElement('img');
-                    img.src = src;
-                    img.className = 'gallery-item';
-                    container.appendChild(img);
-                });
-            }
+        // P3: Distribución (Amenities)
+        const amenCont = document.getElementById('amenities-list-container');
+        propertyConfig.caracteristicasInternas.forEach(a => {
+            const li = document.createElement('li');
+            li.innerHTML = `<span>${a.emoji} ${a.name}</span>`;
+            amenCont.appendChild(li);
+        });
+
+        // P5: Galería 2x3
+        function initGallery() {
+            const container = document.getElementById('gallery-target');
+            propertyConfig.multimedia.imagesList.slice(0, 6).forEach(src => {
+                const img = document.createElement('img');
+                img.src = src;
+                img.className = 'gallery-img';
+                container.appendChild(img);
+            });
         }
-        loadGallery();
+        initGallery();
 
         function downloadPDF() {
             const element = document.getElementById('export-container');
@@ -304,15 +219,15 @@
 
             const opt = {
                 margin: 0,
-                filename: `BROCHURE-NEUTRAL-${propertyConfig.seo.propertyId}.pdf`,
+                filename: `Ficha-Tecnica-Neutral-${propertyConfig.seo.propertyId}.pdf`,
                 image: { type: 'jpeg', quality: 0.98 },
-                html2canvas: { scale: 2, useCORS: true, letterRendering: true },
+                html2canvas: { scale: 2, useCORS: true },
                 jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
                 pagebreak: { mode: ['css', 'legacy'] }
             };
 
             html2pdf().set(opt).from(element).save().then(() => {
-                btn.innerText = 'DESCARGAR PDF NEUTRAL (SIMETRÍA 100%)';
+                btn.innerText = 'DESCARGAR BROCHURE FINAL';
             });
         }
     </script>
