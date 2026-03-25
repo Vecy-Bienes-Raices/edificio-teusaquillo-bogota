@@ -72,27 +72,8 @@ const propertyConfig = {
   descripcionFinal: {
     titulo: "🚀 Análisis de Rentabilidad y Potencial",
     texto: `
-    <div class="roi-item">
-      <strong>💰 Ingresos Mensuales Detallados:</strong>
-      <ul class="roi-list">
-        <li><strong>Local Comercial (Independiente):</strong> $2.400.000</li>
-        <li><strong>Clínica Odontológica (9 Consult.):</strong> $2.900.000 (Neto)</li>
-        <li><strong>Piso 2 (9 Oficinas Ocupadas):</strong> $4.660.000</li>
-        <li><strong>Pisos 3 y 4 (Airbnb/Coliving):</strong> $9.000.000 Promedio (10 Hbt. Rentando)</li>
-      </ul>
-      <p style="margin-top:10px; font-size: 1.1em;">💵 <strong>TOTAL RENTA ACTUAL: $18.960.000 /mes</strong></p>
-
-      <div style="background: rgba(255, 193, 7, 0.1); border-left: 4px solid #ffc107; padding: 12px; margin: 15px 0; border-radius: 4px;">
-        ⚠️ <strong>Nota del Propietario:</strong><br>
-        • <strong>Clínica:</strong> El ingreso ($2.9M) es solo el 50% del potencial. El propietario actual ocupa la otra mitad.<br>
-        • <strong>Habitaciones:</strong> Son <strong>20 unidades en total</strong> (Pisos 3 y 4). Actualmente solo <strong>10 están amobladas y rentando</strong>. Las otras 10 están listas para amoblar y duplicar este ingreso inmediatamente.
-        <br><br>
-        ℹ️ <strong>Zona de Trabajo:</strong> El espacio del 4º piso es un beneficio exclusivo para los inquilinos.
-      </div>
-
-      <div class="projection" style="background: rgba(16, 185, 129, 0.1); border-left: 4px solid #10b981; padding: 10px; margin-bottom: 20px;">
-        <strong>ROI ACTUAL: 7.58% Anual</strong> (Calculado sobre inversión de $3.000M)
-      </div>
+    <div class="roi-item" style="text-align: center;">
+      <p style="margin-bottom: 25px; font-size: 1.1em; color: #4a332a;"><strong>Oportunidad de Inversión Triple AAA:</strong> Edificio con alta rentabilidad operativa y potencial de optimización inmediata en Teusaquillo.</p>
       <div style="text-align: center;">
           <a href="analisis.html" class="btn-analisis">
               📋 VER MÁS DETALLES DEL EDIFICIO
