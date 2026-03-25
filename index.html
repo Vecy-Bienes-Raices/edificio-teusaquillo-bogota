@@ -421,7 +421,8 @@
         pointer-events: none;
       }
 
-      #shareBtn, .btn-analisis {
+      /* --- BOTÓN COMPARTIR (GOLD DNA) --- */
+      #shareBtn {
         background: linear-gradient(180deg, #FFD700 0%, #FDB931 50%, #DAA520 100%) !important;
         color: #3E2723 !important;
         border: none !important;
@@ -436,28 +437,59 @@
         min-width: 280px !important; 
         justify-content: center !important;
         text-align: center !important;
-        box-shadow: 
-          0 6px 0 #B8860B, 
-          0 12px 20px rgba(0, 0, 0, 0.3),
-          inset 0 2px 0 rgba(255, 255, 255, 0.5) !important;
+        box-shadow: 0 6px 0 #B8860B, 0 12px 20px rgba(0, 0, 0, 0.3), inset 0 2px 0 rgba(255, 255, 255, 0.5) !important;
         transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
         text-transform: uppercase !important;
         letter-spacing: 1px !important;
         text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4) !important;
         position: relative !important;
         overflow: hidden !important;
-        text-decoration: none !important;
         margin: 20px auto !important;
       }
       
-      #shareBtn.shared-success {
-        background: linear-gradient(180deg, #4ade80 0%, #22c55e 50%, #16a34a 100%) !important;
+      #shareBtn:hover {
+        background: linear-gradient(180deg, #FFF8DC 0%, #FFD700 50%, #FFC107 100%) !important;
+        transform: translateY(-4px) scale(1.02) !important;
+        box-shadow: 0 10px 0 #B8860B, 0 20px 40px rgba(255, 215, 0, 0.4), inset 0 2px 0 rgba(255, 255, 255, 0.8) !important;
+      }
+
+      #shareBtn:active {
+        transform: translateY(4px) !important;
+        box-shadow: 0 2px 0 #B8860B, 0 4px 10px rgba(0, 0, 0, 0.2) !important;
+      }
+
+      /* --- BOTÓN ANÁLISIS (ORANGE DNA) --- */
+      .btn-analisis {
+        background: linear-gradient(180deg, #ff8c00 0%, #ff7b00 50%, #e66c00 100%) !important;
         color: #ffffff !important;
-        box-shadow: 
-          0 6px 0 #15803d, 
-          0 12px 20px rgba(22, 163, 74, 0.4),
-          inset 0 2px 0 rgba(255, 255, 255, 0.5) !important;
-        text-shadow: 0 2px 0 #14532d !important;
+        border: none !important;
+        padding: 18px 50px !important;
+        font-size: 18px !important;
+        font-weight: 900 !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        gap: 12px !important;
+        border-radius: 50px !important;
+        cursor: pointer !important;
+        min-width: 280px !important; 
+        justify-content: center !important;
+        text-align: center !important;
+        box-shadow: 0 6px 0 #b35900, 0 12px 20px rgba(0, 0, 0, 0.3), inset 0 2px 0 rgba(255, 255, 255, 0.3) !important;
+        transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+        text-transform: uppercase !important;
+        text-decoration: none !important;
+        margin: 10px auto !important;
+      }
+      
+      .btn-analisis:hover {
+        background: linear-gradient(180deg, #ffa500 0%, #ff8c00 50%, #ff7b00 100%) !important;
+        transform: translateY(-4px) scale(1.02) !important;
+        box-shadow: 0 10px 0 #b35900, 0 20px 40px rgba(255, 140, 0, 0.4) !important;
+      }
+
+      .btn-analisis:active {
+        transform: translateY(4px) !important;
+        box-shadow: 0 2px 0 #b35900, 0 4px 10px rgba(0, 0, 0, 0.2) !important;
       }
 
       #shareBtn::after, .btn-analisis::after {
@@ -467,92 +499,13 @@
         left: -50% !important;
         width: 200% !important;
         height: 200% !important;
-        background: linear-gradient(
-          to right,
-          rgba(255, 255, 255, 0) 0%,
-          rgba(255, 255, 255, 0.3) 50%,
-          rgba(255, 255, 255, 0) 100%
-        ) !important;
+        background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.3) 50%, rgba(255, 255, 255, 0) 100%) !important;
         transform: rotate(45deg) translate(-100%, -100%) !important;
         transition: transform 0.6s !important;
       }
 
-      #shareBtn:hover, .btn-analisis:hover {
-        background: linear-gradient(180deg, #FFF8DC 0%, #FFD700 50%, #FFC107 100%) !important;
-        transform: translateY(-4px) scale(1.02) !important;
-        box-shadow: 
-          0 10px 0 #B8860B, 
-          0 20px 40px rgba(255, 215, 0, 0.4),
-          inset 0 2px 0 rgba(255, 255, 255, 0.8) !important;
-        color: #251605 !important;
-      }
-      
       #shareBtn:hover::after, .btn-analisis:hover::after {
         transform: rotate(45deg) translate(100%, 100%) !important;
-      }
-
-      #shareBtn:active, .btn-analisis:active {
-        transform: translateY(4px) !important;
-        box-shadow: 
-          0 2px 0 #B8860B, 
-          0 4px 10px rgba(0, 0, 0, 0.2) !important;
-      }
-      
-      #shareBtn.shared-success {
-        background: linear-gradient(180deg, #4ade80 0%, #22c55e 50%, #16a34a 100%);
-        color: #ffffff;
-        box-shadow: 
-          0 6px 0 #15803d, 
-          0 12px 20px rgba(22, 163, 74, 0.4),
-          inset 0 2px 0 rgba(255, 255, 255, 0.5);
-        text-shadow: 0 2px 0 #14532d;
-      }
-
-      #shareBtn::after {
-        content: "";
-        position: absolute;
-        top: -50%;
-        left: -50%;
-        width: 200%;
-        height: 200%;
-        background: linear-gradient(
-          to right,
-          rgba(255, 255, 255, 0) 0%,
-          rgba(255, 255, 255, 0.3) 50%,
-          rgba(255, 255, 255, 0) 100%
-        );
-        transform: rotate(45deg) translate(-100%, -100%);
-        transition: transform 0.6s;
-      }
-
-      #shareBtn:hover {
-        background: linear-gradient(180deg, #FFF8DC 0%, #FFD700 50%, #FFC107 100%);
-        transform: translateY(-4px) scale(1.02);
-        box-shadow: 
-          0 10px 0 #B8860B, 
-          0 20px 40px rgba(255, 215, 0, 0.4),
-          inset 0 2px 0 rgba(255, 255, 255, 0.8);
-        color: #251605;
-      }
-      
-      #shareBtn.shared-success:hover {
-        background: linear-gradient(180deg, #86efac 0%, #4ade80 50%, #22c55e 100%);
-        box-shadow: 
-          0 8px 0 #15803d, 
-          0 20px 40px rgba(22, 163, 74, 0.6),
-          inset 0 2px 0 rgba(255, 255, 255, 0.8);
-        color: #ffffff;
-      }
-
-      #shareBtn:hover::after {
-        transform: rotate(45deg) translate(100%, 100%);
-      }
-
-      #shareBtn:active {
-        transform: translateY(4px);
-        box-shadow: 
-          0 2px 0 #15803d, 
-          0 4px 10px rgba(0, 0, 0, 0.2);
       }
 
       @media (max-width: 600px) {
@@ -840,7 +793,7 @@
     </div>
 
     <div class="glass-card" style="text-align: center">
-      <a href="analisis.html" class="btn-analisis" id="mainDetailBtn">📋 VER MÁS DETALLES DEL EDIFICIO</a>
+      <button id="shareBtn">📤 COMPARTIR FICHA</button>
     </div>
 
     <div class="footer">
