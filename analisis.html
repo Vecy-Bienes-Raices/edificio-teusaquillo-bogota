@@ -282,15 +282,16 @@
         const webGallery = document.getElementById('web-gallery-container');
         if (webGallery) {
           webGallery.innerHTML = '';
-          propertyConfig.multimedia.imagesList.slice(0, 12).forEach(src => {
+          // Mostrar solo 6 fotos para el formato editorial de 2 columnas
+          propertyConfig.multimedia.imagesList.slice(0, 6).forEach(src => {
             const img = document.createElement('img');
             img.src = src;
             img.style.width = '100%';
-            img.style.aspectRatio = '16/9';
+            img.style.height = '250px'; // Fotos más grandes para el folio
             img.style.objectFit = 'cover';
-            img.style.borderRadius = '12px';
-            img.style.border = '1px solid #ddd';
-            img.style.boxShadow = '0 4px 10px rgba(0,0,0,0.1)';
+            img.style.borderRadius = '15px';
+            img.style.border = '1.5px solid #eee';
+            img.style.boxShadow = '0 5px 15px rgba(0,0,0,0.08)';
             img.style.display = 'block';
             webGallery.appendChild(img);
           });
@@ -309,7 +310,7 @@
         if (stealthLayer) stealthLayer.style.display = 'none';
 
         const opt = {
-          margin: [10, 10, 15, 10], 
+          margin: 0, 
           filename: `Ficha-Tecnica-${propertyConfig.seo.propertyId}.pdf`,
           image: { type: 'jpeg', quality: 0.98 },
           html2canvas: { 
@@ -319,7 +320,7 @@
             logging: false
           },
           jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
-          pagebreak: { mode: ['avoid-all', 'css', 'legacy'] }
+          pagebreak: { mode: ['css', 'legacy'] }
         };
 
         html2pdf().set(opt).from(element).save().then(() => {
