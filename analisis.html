@@ -127,18 +127,9 @@
       <div style="text-align: right; color: #d4af37; font-weight: bold; font-size: 14px; margin-bottom: 10px;">
         REF: <span id="prop-id-display">ID-BOG-ET01</span>
       </div>
-      <div class="pdf-header-logo" style="display: none; justify-content: space-between; align-items: center; border-bottom: 3px solid #d4af37; padding-bottom: 20px; margin-bottom: 30px;">
-          <div style="font-size: 24px; font-weight: 800; color: #3e2723;">INMUEBLE EN VENTA</div>
-          <div style="font-weight: 700; color: #d4af37; text-align: right;">FICHA TÉCNICA PROFESIONAL</div>
-      </div>
 
       <h1>Ficha Técnica del Inmueble</h1>
       <p style="text-align: center; font-weight: bold; color: #666; margin-bottom: 30px;">EDIFICIO MULTIFUNCIONAL - TEUSAQUILLO, BOGOTÁ</p>
-
-      <div class="pdf-grid-intro" style="display: none; grid-template-columns: 1.5fr 1fr; gap: 20px; margin-bottom: 30px;">
-          <div style="font-size: 1.4em; color: #b8860b; font-weight: 700; align-self: center;">Precio de Venta: $3.000.000.000 COP</div>
-          <img src="assets/1.jpg" style="width: 100%; height: 150px; object-fit: cover; border-radius: 12px; border: 1px solid #ddd;">
-      </div>
 
       <div class="section-block" style="page-break-inside: avoid;">
         <h2>1. Descripción General</h2>
@@ -267,11 +258,12 @@
             const img = document.createElement('img');
             img.src = src;
             img.style.width = '100%';
-            img.style.height = '150px';
+            img.style.aspectRatio = '16/9';
             img.style.objectFit = 'cover';
             img.style.borderRadius = '12px';
             img.style.border = '1px solid #ddd';
             img.style.boxShadow = '0 4px 10px rgba(0,0,0,0.1)';
+            img.style.display = 'block';
             webGallery.appendChild(img);
           });
         }
@@ -281,14 +273,8 @@
       function downloadPDF() {
         const element = document.getElementById('export-container');
         const btn = document.getElementById('pdf-btn');
-        const logoHeader = element.querySelector('.pdf-header-logo');
-        const introGrid = element.querySelector('.pdf-grid-intro');
 
         btn.innerHTML = '⌛ GENERANDO...';
-        
-        // Mostrar elementos solo-PDF temporalmente
-        logoHeader.style.display = 'flex';
-        introGrid.style.display = 'grid';
 
         const opt = {
           margin: [10, 10, 15, 10], 
@@ -298,15 +284,14 @@
             scale: 3, 
             useCORS: true,
             letterRendering: true,
-            logging: false
+            logging: false,
+            windowWidth: 1000 // Forzar ancho de renderizado para evitar distorsión
           },
           jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
           pagebreak: { mode: ['avoid-all', 'css', 'legacy'] }
         };
 
         html2pdf().set(opt).from(element).save().then(() => {
-          logoHeader.style.display = 'none';
-          introGrid.style.display = 'none';
           btn.innerHTML = '📄 DESCARGAR PDF';
         });
       }
