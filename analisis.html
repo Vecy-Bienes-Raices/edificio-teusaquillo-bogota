@@ -181,51 +181,75 @@
 
         <div class="pdf-grid">
             <div class="pdf-section">
-                <h2 style="border-bottom: 2px solid #d4af37; color: #3e2723;">Resumen del Activo</h2>
-                <div class="pdf-item"><strong>• Área Const:</strong> 1.068 m²</div>
-                <div class="pdf-item"><strong>• Renta Mensual:</strong> $18.960.000</div>
-                <div class="pdf-item"><strong>• ROI Estimado:</strong> 7.58% Anual</div>
-                <div class="pdf-item"><strong>• Configuración:</strong> 20 Hab + Ofis + Local</div>
-                <div class="pdf-item"><strong>• Estado:</strong> Remodelación AAA</div>
+                <h2 style="border-bottom: 2px solid #d4af37; color: #3e2723;">📍 Ficha de Resumen</h2>
+                <div class="pdf-item"><strong>• Área Construida:</strong> 1.068 m²</div>
+                <div class="pdf-item"><strong>• Lote:</strong> 12 x 30 m</div>
+                <div class="pdf-item"><strong>• Niveles:</strong> 4 Pisos + Azotea técnica</div>
                 <div class="pdf-item"><strong>• Ubicación:</strong> Teusaquillo, Bogotá</div>
+                <div class="pdf-item" style="margin-top: 10px; color: #b8860b;"><strong>ESTADO:</strong> Remodelación Ética AAA</div>
             </div>
             <div>
-                <img src="assets/1.png" style="width: 100%; border-radius: 12px; border: 1px solid #ddd; height: 180px; object-fit: cover;">
+                <img src="assets/1.jpg" style="width: 100%; border-radius: 12px; border: 1px solid #ddd; height: 180px; object-fit: cover;">
             </div>
         </div>
 
-        <div class="pdf-section" style="background: #fdfbf0; padding: 20px; border-radius: 12px; border: 1px solid #e0d0b0; margin-top: 20px;">
-            <h2 style="margin-top: 0; color: #8b4513;">📈 Análisis de Rentabilidad Detallado</h2>
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
-                <div>
-                    <h3 style="font-size: 14px; color: #3e2723;">Distribución de Renta:</h3>
-                    <div class="pdf-item">• Local Comercial + Clínica: $6.300.000</div>
-                    <div class="pdf-item">• Piso 2 (Oficinas): $4.660.000</div>
-                    <div class="pdf-item">• Pisos 3 y 4 (Airbnb/Coliving): $8.000.000</div>
-                    <p style="font-weight: 800; color: #b8860b; margin-top: 10px;">TOTAL ACTUAL: $18.960.000 / mes</p>
+        <div class="pdf-section" style="background: #fdfbf0; padding: 25px; border-radius: 15px; border: 1.5px solid #d4af37; margin-top: 10px;">
+            <h2 style="margin-top: 0; color: #3e2723; border: none; text-align: center;">📈 DASHBOARD DE RENTABILIDAD</h2>
+            
+            <!-- ROI Meter -->
+            <div style="margin: 20px 0;">
+                <div style="display: flex; justify-content: space-between; margin-bottom: 5px; font-weight: bold; font-size: 14px;">
+                    <span>ROI ACTUAL (CAP RATE)</span>
+                    <span style="color: #10b981;">7.58% Anual</span>
                 </div>
-                <div>
-                    <h3 style="font-size: 14px; color: #3e2723;">Cifras Clave:</h3>
-                    <div class="pdf-item"><strong>• Renta Anual:</strong> $227.520.000</div>
-                    <div class="pdf-item"><strong>• Valor Inversión:</strong> $3.000.000.000</div>
-                    <div class="pdf-item"><strong>• CAP Rate (ROI):</strong> 7.58%</div>
+                <div style="width: 100%; height: 12px; background: #e5e7eb; border-radius: 10px; overflow: hidden;">
+                    <div style="width: 75.8%; height: 100%; background: linear-gradient(90deg, #d4af37, #10b981); border-radius: 10px;"></div>
                 </div>
+                <p style="font-size: 11px; color: #666; margin-top: 5px;">* Rendimiento calculado sobre valor de inversión de $3.000M COP.</p>
             </div>
-            <div style="margin-top: 15px; font-size: 12px; color: #5d4037; border-top: 1px solid #ddd; padding-top: 10px;">
-                <p><strong>⚠️ Nota del Propietario:</strong> Potencial de duplicar el ingreso en la Clínica (ocupación actual al 50%) y en habitaciones (10 unidades listas para amoblar adicionales).</p>
+
+            <div style="display: grid; grid-template-columns: 1.5fr 1fr; gap: 30px; margin-top: 20px;">
+                <div>
+                    <h3 style="font-size: 15px; color: #8b4513; margin-bottom: 10px;">💰 Distribución de Rentas</h3>
+                    <table style="width: 100%; font-size: 13px; border-collapse: collapse;">
+                        <tr style="border-bottom: 1px solid #eee;">
+                            <td style="padding: 8px 0;">Local + Clínica (AAA)</td>
+                            <td style="padding: 8px 0; text-align: right; font-weight: 700;">$6.300.000</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid #eee;">
+                            <td style="padding: 8px 0;">Piso 2 (Oficinas)</td>
+                            <td style="padding: 8px 0; text-align: right; font-weight: 700;">$4.660.000</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid #eee;">
+                            <td style="padding: 8px 0;">Pisos 3-4 (Coliving/Airbnb)</td>
+                            <td style="padding: 8px 0; text-align: right; font-weight: 700;">$8.000.000</td>
+                        </tr>
+                        <tr style="background: rgba(212, 175, 55, 0.1);">
+                            <td style="padding: 10px; font-weight: 800; color: #3e2723;">TOTAL MENSUAL</td>
+                            <td style="padding: 10px; text-align: right; font-weight: 800; color: #b8860b;">$18.960.000</td>
+                        </tr>
+                    </table>
+                </div>
+                <div>
+                    <div style="background: white; padding: 15px; border-radius: 10px; border: 1px solid #eee;">
+                        <h3 style="font-size: 14px; margin-top: 0;">⚠️ Potencial Extra</h3>
+                        <p style="font-size: 12px; color: #555;">Existen <strong>10 unidades adicionales</strong> en pisos 3 y 4 listas para amoblar que podrían <strong>duplicar</strong> el ingreso actual del bloque Airbnb.</p>
+                        <p style="font-size: 12px; color: #555; margin-top: 5px;">La Clínica Odontológica opera actualmente al <strong>50% de su capacidad</strong> edilicia.</p>
+                    </div>
+                </div>
             </div>
         </div>
 
         <div class="pdf-section" style="page-break-before: always; margin-top: 40px;">
-            <h2>Registro Fotográfico Seleccionado</h2>
+            <h2 style="border-bottom: 2px solid #d4af37;">📸 Registro Fotográfico Seleccionado</h2>
             <div class="pdf-gallery" id="pdf-gallery-container">
-                <!-- Se inyectarán 12 fotos vía JS -->
+                <!-- Inyección de 12 fotos nítidas -->
             </div>
         </div>
 
         <div class="pdf-footer">
-            <p>Esta ficha técnica es exclusivamente para uso informativo y comercial.</p>
-            <p>Información sugerida para aliados inmobiliarios e inversionistas.</p>
+            <p><strong>Vecy Bienes Raíces:</strong> Consultoría de Activos de Alta Rentabilidad.</p>
+            <p>Este informe técnico tiene carácter estrictamente comercial y preventivo.</p>
         </div>
     </div>
 
