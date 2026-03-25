@@ -73,12 +73,7 @@ const propertyConfig = {
     titulo: "🚀 Análisis de Rentabilidad y Potencial",
     texto: `
     <div class="roi-item" style="text-align: center;">
-      <p style="margin-bottom: 25px; font-size: 1.1em; color: #4a332a;"><strong>Oportunidad de Inversión Triple AAA:</strong> Edificio con alta rentabilidad operativa y potencial de optimización inmediata en Teusaquillo.</p>
-      <div style="text-align: center;">
-          <a href="analisis.html" class="btn-analisis">
-              📋 VER MÁS DETALLES DEL EDIFICIO
-          </a>
-      </div>
+      <p style="margin-bottom: 5px; font-size: 1.1em; color: #4a332a;"><strong>Oportunidad de Inversión Triple AAA:</strong> Edificio con alta rentabilidad operativa y potencial de optimización inmediata en Teusaquillo.</p>
     </div>`
   },
 
