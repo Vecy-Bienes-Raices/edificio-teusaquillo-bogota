@@ -531,15 +531,26 @@
 
         /* BUTTON REFINEMENT FOR MOBILE */
         #shareBtn, .btn-analisis {
-          padding: 12px 20px !important; 
+          display: inline-block !important;
+          background: linear-gradient(180deg, #ff6b00 0%, #e65c00 100%) !important;
+          color: white !important;
+          padding: 15px 25px !important; 
           width: 100%; 
-          min-width: auto;
-          font-size: 15px !important; 
-          font-weight: 700 !important; 
-          letter-spacing: 0.5px !important; 
-          text-transform: capitalize !important; 
-          border-radius: 12px !important; 
-          box-shadow: 0 4px 0 rgba(0,0,0,0.2) !important; 
+          max-width: 320px;
+          margin: 10px auto !important;
+          text-decoration: none !important;
+          font-size: 16px !important; 
+          font-weight: 800 !important; 
+          text-transform: uppercase !important; 
+          border-radius: 50px !important; 
+          box-shadow: 0 4px 15px rgba(255, 107, 0, 0.4) !important; 
+          border-bottom: 4px solid #b34700 !important;
+          transition: transform 0.2s !important;
+          text-align: center !important;
+        }
+        .btn-analisis:active {
+          transform: translateY(2px);
+          border-bottom-width: 2px;
         }
 
         /* Performance Optimizations & "Premium Coffee/Gold" Look */
