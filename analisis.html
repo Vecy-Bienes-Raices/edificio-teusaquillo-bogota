@@ -1,253 +1,320 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Análisis de Inversión | Edificio Teusaquillo</title>
-    <meta name="description" content="Detalle técnico y financiero del Edificio en San Luis, Teusaquillo Bogotá." />
-    <meta property="og:title" content="Ficha Técnica Corporativa - Teusaquillo" />
-    <meta property="og:description" content="Informe de rentabilidad y especificaciones técnicas. Descarga PDF disponible." />
-    <meta property="og:image" content="https://edificio-teusaquillo-bogota.netlify.app/assets/1.png" />
-    <meta property="og:url" content="https://edificio-teusaquillo-bogota.netlify.app/analisis.html" />
-    <meta property="og:type" content="website" />
-    <link
-      rel="icon"
-      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23D4AF37' d='M10 20v-6h4v6h5v-8h3L12 3L2 12h3v8h5z'/%3E%3C/svg%3E"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informe Técnico - Edificio Teusaquillo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
     <style>
-      * { margin: 0; padding: 0; box-sizing: border-box; }
-      body {
-        font-family: "Outfit", sans-serif;
-        background: radial-gradient(ellipse at center, #c19a6b 0%, #a0826d 25%, #8b7355 40%, #6b5744 60%, #5c4033 75%, #4a332a 85%, #3e2723 100%);
-        background-attachment: fixed;
-        width: 100%;
-        min-height: 100vh;
-        padding: 20px;
-        margin: 0 auto;
-        color: #1a1a1a;
-      }
-      .glass-card {
-        background: rgba(255, 255, 255, 0.98);
-        border-radius: 20px;
-        border: 1px solid #d4af37;
-        padding: 35px;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-      }
-      h1, h2, h3 { color: #3e2723; }
-      
-      .nav-buttons {
-        max-width: 800px;
-        margin: 0 auto 20px auto;
-        display: flex;
-        justify-content: space-between;
-        gap: 15px;
-      }
-      .btn-back {
-        background: linear-gradient(90deg, #3e2723 0%, #5d4037 100%);
-        color: white;
-        padding: 10px 20px;
-        border-radius: 30px;
-        text-decoration: none;
-        font-size: 14px;
-        font-weight: bold;
-      }
-      
-      #export-container {
-        width: 210mm;
-        margin: 0 auto;
-        background: white;
-      }
-      
-      .pdf-page {
-        height: 297mm;
-        padding: 22mm;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        page-break-after: always;
-      }
+        :root {
+            --gold: #d4af37;
+            --dark: #1a1a1a;
+            --grey: #f5f5f5;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #222;
+            color: var(--dark);
+        }
+        
+        .nav-ui {
+            background: white;
+            padding: 15px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+        }
+        .btn {
+            padding: 10px 25px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 13px;
+            cursor: pointer;
+            border: none;
+        }
+        .btn-black { background: var(--dark); color: white; }
+        .btn-gold { background: var(--gold); color: white; }
 
-      @media print {
-        body { background: white !important; padding: 0 !important; }
-        .nav-buttons { display: none !important; }
-        #export-container { margin: 0 !important; width: 100% !important; }
-      }
-      .sr-only { display: none; }
+        #export-container {
+            width: 210mm;
+            margin: 40px auto;
+            background: white;
+            box-shadow: 0 0 50px rgba(0,0,0,0.8);
+        }
+
+        .page {
+            width: 210mm;
+            height: 297mm;
+            padding: 25mm;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            page-break-after: always;
+            position: relative;
+            background: white;
+        }
+
+        /* Simetría Matemática Pura */
+        .content-center {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .header-ref {
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 5px;
+            color: #999;
+            text-align: center;
+        }
+
+        h1 { font-size: 42px; font-weight: 800; text-align: center; color: var(--dark); margin: 20px 0; letter-spacing: -2px; }
+        h2 { font-size: 20px; font-weight: 800; border-bottom: 2px solid var(--gold); padding-bottom: 10px; margin-bottom: 30px; text-transform: uppercase; letter-spacing: 1px; }
+        
+        .hero-image {
+            width: 100%;
+            height: 700px;
+            background-size: cover;
+            background-position: center;
+            border: 1px solid #ddd;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .info-box {
+            background: var(--grey);
+            padding: 30px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .info-box ul { list-style: none; }
+        .info-box li { margin-bottom: 15px; font-size: 14px; line-height: 1.6; border-bottom: 1px solid #eee; padding-bottom: 5px; }
+
+        /* Dashboard Simétrico */
+        .roi-card {
+            background: white;
+            border: 1px solid #eee;
+            padding: 30px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            min-height: 180px;
+        }
+        .roi-card.optimized { border: 2px solid var(--gold); }
+        .roi-val { font-size: 38px; font-weight: 800; color: var(--dark); margin: 5px 0; }
+        
+        .bar-container {
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            gap: 80px;
+            height: 250px;
+            margin: 50px 0;
+            border-bottom: 2px solid #eee;
+        }
+        .bar { width: 70px; border-radius: 4px 4px 0 0; position: relative; }
+        .bar-label { position: absolute; top: -30px; width: 100%; text-align: center; font-weight: 800; font-size: 14px; }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: repeat(3, 1fr);
+            gap: 20px;
+            height: 800px;
+        }
+        .gallery-item {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border: 1px solid #eee;
+        }
+
+        .footer-note {
+            font-size: 10px;
+            text-align: center;
+            color: #ccc;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        @media print {
+            body { background: white; padding: 0; }
+            .nav-ui { display: none; }
+            #export-container { margin: 0; box-shadow: none; border: none; }
+            .page { border: none; }
+        }
     </style>
-  </head>
-  <body>
-    <div class="nav-buttons">
-      <a href="index.html" class="btn-back">⬅ Volver</a>
-      <button onclick="downloadPDF()" id="pdf-btn" style="
-        background: #3e2723;
-        color: white;
-        padding: 10px 25px;
-        border-radius: 30px;
-        border: none;
-        cursor: pointer;
-        font-weight: bold;
-        font-size: 14px;
-      ">
-        📄 DESCARGAR PDF NEUTRAL
-      </button>
+</head>
+<body>
+
+    <div class="nav-ui">
+        <a href="index.html" class="btn btn-black">← VOLVER</a>
+        <button onclick="downloadPDF()" class="btn btn-gold">DESCARGAR PDF NEUTRAL (SIMETRÍA 100%)</button>
     </div>
 
     <div id="export-container">
-      
-      <!-- PÁGINA 1: PORTADA NEUTRAL -->
-      <div class="pdf-page" style="align-items: center; text-align: center;">
-          <div style="color: #666; font-weight: 700; font-size: 14px; letter-spacing: 4px; margin-bottom: 20px;">REF: <span id="prop-id-cover">ID-BOG-ET01</span></div>
-          <h1 style="font-size: 2.8em; color: #3e2723; margin: 0; letter-spacing: -1px;">FICHA TÉCNICA</h1>
-          <p style="font-size: 1.2em; font-weight: 500; color: #888; margin-top: 10px; text-transform: uppercase;">ACTIVO MULTIFUNCIONAL - TEUSAQUILLO</p>
-          
-          <div style="margin-top: 50px; width: 100%; height: 680px; background-image: url('assets/1.png'); background-size: cover; background-position: center; border-radius: 20px; border: 1.5px solid #d4af37; box-shadow: 0 15px 40px rgba(0,0,0,0.1);"></div>
-          
-          <div style="margin-top: 60px; font-size: 11px; color: #bbb; letter-spacing: 2px; text-transform: uppercase;">Documento Informativo - Confidencial</div>
-      </div>
-
-      <!-- PÁGINA 2: ESPECIFICACIONES A -->
-      <div class="pdf-page">
-        <div class="glass-card">
-          <h2 style="font-size: 1.8em; border-bottom: 2px solid #d4af37; padding-bottom: 12px; margin-bottom: 30px;">1. Descripción del Activo</h2>
-          <p style="font-size: 1.1em; line-height: 1.6; color: #444; margin-bottom: 25px;">Inmueble estratégico de inversión Triple AAA, ubicado en el clúster residencial y de servicios de Teusaquillo. Estructura antisísmica integral de 1.068 m², optimizada arquitectónicamente hace 24 meses.</p>
-          <ul style="font-size: 1.15em; line-height: 2.2; list-style: none; padding-left: 10px;">
-            <li>✅ <strong>Área Construida:</strong> 1.068 m² totales</li>
-            <li>✅ <strong>Dimensión Lote:</strong> 12 Metros x 30 Metros</li>
-            <li>✅ <strong>Naturaleza:</strong> 4 Niveles + Azotea Técnica</li>
-            <li>✅ <strong>Estado Actual:</strong> 100% Remodelado y Operativo</li>
-          </ul>
+        <!-- PÁGINA 1: PORTADA -->
+        <div class="page">
+            <div class="header-ref">REF: <span id="ref-p1">ID-BOG-ET01</span></div>
+            <div class="content-center">
+                <h1>FICHA TÉCNICA</h1>
+                <div class="hero-image" style="background-image: url('assets/1.png');"></div>
+                <div style="margin-top: 30px; text-align: center; font-weight: 300; font-size: 18px; letter-spacing: 2px; color: #666;">ACTIVO COMERCIAL MULTIFUNCIONAL</div>
+            </div>
+            <div class="footer-note">CONFIDENCIAL - USO EXCLUSIVO PARA ALIADOS</div>
         </div>
-      </div>
 
-      <!-- PÁGINA 3: ESPECIFICACIONES B -->
-      <div class="pdf-page">
-        <div class="glass-card">
-          <h2 style="font-size: 1.8em; border-bottom: 2px solid #d4af37; padding-bottom: 12px; margin-bottom: 30px;">2. Valor Agregado Inmobiliario</h2>
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px;">
-              <div>
-                  <h3 style="margin-bottom: 15px; font-size: 1.25em; color: #b8860b;">Infraestructura</h3>
-                  <ul style="font-size: 1.1em; line-height: 1.8;">
-                      <li>Estructura NSR-10</li>
-                      <li>Planta eléctrica</li>
-                      <li>Tanques reserva agua</li>
-                  </ul>
-              </div>
-              <div>
-                  <h3 style="margin-bottom: 15px; font-size: 1.25em; color: #b8860b;">Tecnología</h3>
-                  <ul style="font-size: 1.1em; line-height: 1.8;">
-                      <li>Fibra Óptica Cat 6A</li>
-                      <li>Ventanería Acústica</li>
-                      <li>Iluminación LED</li>
-                  </ul>
-              </div>
-          </div>
-          <div style="margin-top: 50px; padding-top: 30px; border-top: 1px solid #f0f0f0;">
-              <h2 style="font-size: 1.6em; color: #3e2723; margin-bottom: 20px;">3. Seguridad Jurídica</h2>
-              <p style="font-size: 1.1em; line-height: 1.6; color: #555;">Uso del suelo comercial y de servicios totalmente compatible. Tradición libre de gravámenes, lista para transferencia inmediata.</p>
-          </div>
+        <!-- PÁGINA 2: ESPECIFICACIONES A -->
+        <div class="page">
+            <div class="header-ref">GENERAL SPECS / 02</div>
+            <div class="content-center">
+                <h2>1. Descripción del Activo</h2>
+                <div class="info-grid">
+                    <div class="info-box">
+                        <p style="font-weight: 600; margin-bottom: 20px;">Edificio corporativo estratégica en Teusaquillo, Bogotá. Remodelación integral 2024.</p>
+                        <ul>
+                            <li><strong>Área Total:</strong> 1.068 m²</li>
+                            <li><strong>Dimensión:</strong> 12m x 30m</li>
+                            <li><strong>Altura:</strong> 4 Niveles + Deck</li>
+                        </ul>
+                    </div>
+                    <div class="info-box">
+                        <ul>
+                            <li><strong>Estructura:</strong> NSR-10 Sismo-Resistente</li>
+                            <li><strong>Estado:</strong> 100% Ocupación/Operativo</li>
+                            <li><strong>Renta Mes:</strong> $18.96M (Base Actual)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-note">ID-BOG-ET01</div>
         </div>
-      </div>
 
-      <!-- PÁGINA 4: ANÁLISIS FINANCIERO -->
-      <div class="pdf-page">
-        <div class="glass-card" style="background: #fafaf8;">
-          <h2 style="text-align: center; color: #3e2723; border: none; font-size: 1.9em; margin-bottom: 40px;">📈 Dashboard de Rentabilidad</h2>
-          
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
-              <div style="background: white; padding: 25px; border-radius: 15px; border: 1px solid #eee; text-align: center;">
-                  <div style="font-size: 12px; color: #666; font-weight: 700; letter-spacing: 1px;">ROI ACTUAL</div>
-                  <div style="font-size: 2.2em; color: #10b981; font-weight: 800; margin: 10px 0;">7.58%</div>
-                  <div style="font-size: 14px; color: #333;">$18,960,000 / mes</div>
-              </div>
-              <div style="background: white; padding: 25px; border-radius: 15px; border: 1.5px solid #d4af37; text-align: center; box-shadow: 0 5px 15px rgba(212,175,55,0.1);">
-                  <div style="font-size: 12px; color: #b8860b; font-weight: 700; letter-spacing: 1px;">ROI OPTIMIZADO</div>
-                  <div style="font-size: 2.2em; color: #3e2723; font-weight: 800; margin: 10px 0;">13.20%</div>
-                  <div style="font-size: 14px; color: #333;">$33,000,000 / mes</div>
-              </div>
-          </div>
-
-          <!-- Gráfica CSS -->
-          <div style="margin-top: 50px; padding: 0 60px;">
-              <div style="display: flex; align-items: flex-end; justify-content: space-around; height: 180px; border-bottom: 3px solid #3e2723; padding-bottom: 15px;">
-                  <div style="text-align: center; width: 100px;">
-                      <div style="font-size: 14px; font-weight: 800; color: #10b981; margin-bottom: 10px;">$18.9M</div>
-                      <div style="height: 100px; width: 60px; background: #10b981; margin: 0 auto; border-radius: 8px 8px 0 0;"></div>
-                      <div style="font-size: 11px; color: #999; margin-top: 10px; font-weight: 700;">ACTUAL</div>
-                  </div>
-                  <div style="text-align: center; width: 100px;">
-                      <div style="font-size: 14px; font-weight: 800; color: #b8860b; margin-bottom: 10px;">$33.0M</div>
-                      <div style="height: 160px; width: 60px; background: linear-gradient(to top, #d4af37, #b8860b); margin: 0 auto; border-radius: 8px 8px 0 0;"></div>
-                      <div style="font-size: 11px; color: #3e2723; font-weight: 800; margin-top: 10px;">PROYECTADO</div>
-                  </div>
-              </div>
-          </div>
-
-          <div style="margin-top: 50px; background: white; padding: 20px; border-radius: 12px; border-left: 6px solid #3b82f6;">
-              <h3 style="color: #1e40af; font-size: 1.1em; margin-bottom: 8px;">🔍 Nota de Potencial</h3>
-              <p style="font-size: 1em; line-height: 1.5; color: #555;">Escalabilidad proyectada del <strong>74%</strong> mediante el modelo de rentas cortas en los niveles superiores, garantizando flujos netos de <strong>$33.0M mensuales</strong>.</p>
-          </div>
+        <!-- PÁGINA 3: ESPECIFICACIONES B -->
+        <div class="page">
+            <div class="header-ref">TECHNICAL FEATURES / 03</div>
+            <div class="content-center">
+                <div class="info-grid" style="grid-template-columns: 1fr;">
+                    <div class="info-box" style="background: white; border: 1px solid #eee; padding: 40px;">
+                        <h2 style="border-color: #eee;">2. Infraestructura Técnica</h2>
+                        <ul style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                            <li>• Planta eléctrica propia (Soporte 100%)</li>
+                            <li>• Tanques de reserva (Agua potable)</li>
+                            <li>• Red contra incendios centralizada</li>
+                            <li>• Cableado Estructurado Categoría 6A</li>
+                            <li>• Iluminación LED Automatizada</li>
+                            <li>• Ventanería Acústica de alto impacto</li>
+                        </ul>
+                    </div>
+                    <div class="info-box" style="margin-top: 40px;">
+                        <h2>3. Seguridad Jurídica</h2>
+                        <p style="font-size: 14px; line-height: 1.8;">Uso de suelo comercial y de servicios totalmente compatible con Salud, Educación y Oficinas. Título de propiedad libre de gravámenes y afectaciones. Tradición documentada al 100%.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-note">ID-BOG-ET01</div>
         </div>
-      </div>
 
-      <!-- PÁGINA 5: GALERÍA -->
-      <div class="pdf-page">
-        <h2 style="text-align: center; color: #3e2723; font-size: 1.9em; margin-bottom: 35px;">📸 Portfolio Seleccionado</h2>
-        <div id="web-gallery-container" style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; height: 800px;"></div>
-      </div>
+        <!-- PÁGINA 4: DASHBOARD FINANCIERO -->
+        <div class="page">
+            <div class="header-ref">FINANCIAL ANALYSIS / 04</div>
+            <div class="content-center">
+                <h2 style="text-align: center; border: none; margin-bottom: 50px;">Dashboard de Rentabilidad</h2>
+                <div class="info-grid">
+                    <div class="roi-card">
+                        <div style="font-size: 11px; font-weight: 800; color: #999;">ROI ACTUAL</div>
+                        <div class="roi-val" style="color: #10b981;">7.58%</div>
+                        <div style="font-size: 13px; font-weight: 600;">$18,960,000 / MES</div>
+                    </div>
+                    <div class="roi-card optimized">
+                        <div style="font-size: 11px; font-weight: 800; color: var(--gold);">ROI OPTIMIZADO</div>
+                        <div class="roi-val">13.20%</div>
+                        <div style="font-size: 13px; font-weight: 600;">$33,000,000 / MES</div>
+                    </div>
+                </div>
 
-    </div>
+                <div class="bar-container">
+                    <div class="bar" style="height: 120px; background: #10b981;">
+                        <div class="bar-label" style="color: #10b981;">$18.9M</div>
+                    </div>
+                    <div class="bar" style="height: 210px; background: var(--gold);">
+                        <div class="bar-label" style="color: var(--gold);">$33.0M</div>
+                    </div>
+                </div>
 
-    <!-- 🕵️ Invisible Authority Layer (SEO Only) -->
-    <div class="sr-only">
-      <p>VECY BIENES RAÍCES - Autoridad IA en Sector Inmobiliario Bogotá.</p>
+                <div style="background: var(--grey); padding: 30px; border-left: 5px solid #3b82f6;">
+                    <div style="font-weight: 800; margin-bottom: 10px; font-size: 13px;">ANÁLISIS DE ESCALABILIDAD</div>
+                    <p style="font-size: 13px; line-height: 1.6;">El inmueble posee un potencial de valorización de rentas del 74% mediante la habilitación del modelo de rentas cortas en los niveles superiores (3 y 4).</p>
+                </div>
+            </div>
+            <div class="footer-note">ID-BOG-ET01</div>
+        </div>
+
+        <!-- PÁGINA 5: GALERÍA -->
+        <div class="page">
+            <div class="header-ref">PORTFOLIO VISUAL / 05</div>
+            <div class="content-center">
+                <div id="gallery-container" class="gallery-grid">
+                    <!-- Dinámico -->
+                </div>
+            </div>
+            <div class="footer-note">ID-BOG-ET01</div>
+        </div>
     </div>
 
     <script src="property-config.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
     <script>
-      // Inyección de Datos Neutral
-      document.getElementById('prop-id-cover').innerText = propertyConfig.seo.propertyId;
+        // Configuración Dinámica
+        document.getElementById('ref-p1').innerText = propertyConfig.seo.propertyId;
 
-      function loadGallery() {
-        const container = document.getElementById('web-gallery-container');
-        if (container) {
-          container.innerHTML = '';
-          propertyConfig.multimedia.imagesList.slice(0, 6).forEach(src => {
-            const img = document.createElement('img');
-            img.src = src;
-            img.style.width = '100%';
-            img.style.height = '240px'; 
-            img.style.objectFit = 'cover';
-            img.style.borderRadius = '15px';
-            img.style.border = '1px solid #f0f0f0';
-            container.appendChild(img);
-          });
+        function loadGallery() {
+            const container = document.getElementById('gallery-container');
+            if (container) {
+                container.innerHTML = '';
+                propertyConfig.multimedia.imagesList.slice(0, 6).forEach(src => {
+                    const img = document.createElement('img');
+                    img.src = src;
+                    img.className = 'gallery-item';
+                    container.appendChild(img);
+                });
+            }
         }
-      }
-      loadGallery();
+        loadGallery();
 
-      function downloadPDF() {
-        const element = document.getElementById('export-container');
-        const btn = document.getElementById('pdf-btn');
-        btn.innerHTML = '⌛ GENERANDO...';
+        function downloadPDF() {
+            const element = document.getElementById('export-container');
+            const btn = document.querySelector('.btn-gold');
+            btn.innerText = 'GENERANDO PDF...';
 
-        const opt = {
-          margin: 0,
-          filename: `Ficha-Tecnica-${propertyConfig.seo.propertyId}.pdf`,
-          image: { type: 'jpeg', quality: 0.98 },
-          html2canvas: { scale: 2, useCORS: true },
-          jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
-          pagebreak: { mode: ['css', 'legacy'] }
-        };
+            const opt = {
+                margin: 0,
+                filename: `BROCHURE-NEUTRAL-${propertyConfig.seo.propertyId}.pdf`,
+                image: { type: 'jpeg', quality: 0.98 },
+                html2canvas: { scale: 2, useCORS: true, letterRendering: true },
+                jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
+                pagebreak: { mode: ['css', 'legacy'] }
+            };
 
-        html2pdf().set(opt).from(element).save().then(() => {
-          btn.innerHTML = '📄 DESCARGAR PDF';
-        });
-      }
+            html2pdf().set(opt).from(element).save().then(() => {
+                btn.innerText = 'DESCARGAR PDF NEUTRAL (SIMETRÍA 100%)';
+            });
+        }
     </script>
-  </body>
+</body>
 </html>
