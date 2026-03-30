@@ -53,8 +53,9 @@
             border-radius: 5px;
         }
 
-        /* Clase temporal exclusiva para generación PDF exacta */
-        .pdf-export-mode #export-container { width: 210mm !important; }
+        /* ----- SOLUCIÓN PERFECTA A4 (CENTRADO Y ESCALA) ----- */
+        .pdf-export-mode, .pdf-export-mode body { padding: 0 !important; margin: 0 !important; background: white !important; display: block !important; }
+        .pdf-export-mode #export-container { width: 210mm !important; margin: 0 !important; }
         .pdf-export-mode .page { 
             width: 210mm !important; 
             height: 295mm !important; 
@@ -62,6 +63,7 @@
             border-radius: 0 !important; 
             box-shadow: none !important; 
             page-break-after: always !important; 
+            box-sizing: border-box !important;
         }
 
         .content-center { flex-grow: 1; display: flex; flex-direction: column; justify-content: center; }
@@ -100,7 +102,7 @@
         }
 
         /* --- RESPONSIVE OMNICHANNEL MOBILE --- */
-        @media screen and (max-width: 900px) {
+        @media screen and (max-width: 600px) {
             body { padding: 10px; }
             .nav-ui { max-width: 100%; flex-direction: column; }
             .btn-black, .btn-gold { width: 100%; }
@@ -305,7 +307,7 @@
                         useCORS: true, 
                         letterRendering: true,
                         scrollY: 0,
-                        windowWidth: 1200 // Forza ancho escritorio para garantizar A4
+                        scrollX: 0
                     },
                     jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
                     pagebreak: { mode: ['css', 'legacy'] }
